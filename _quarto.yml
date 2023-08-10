@@ -1,0 +1,57 @@
+project:
+  type: website
+
+website:
+  title: "PharmaDevOps"
+  image: assets/PharmaDevOps.png
+  favicon: assets/PharmaDevOps.png
+  twitter-card:
+    site: "@PHUSETwitta"
+  open-graph: true
+  site-url: https://phuse-org.github.io/devops
+  repo-url: https://github.com/phuse-org/devops
+  repo-actions: [edit, issue]
+  navbar:
+    background: "#f0eeeb"
+    logo: assets/PharmaDevOps.png
+    logo-alt: "PharmaDevOps Brand"
+    title: false
+    collapse-below: lg
+    right:
+      - meetings/index.qmd
+      - text: "About PharmaDevOps"
+        menu:
+        - text: "Who we are"
+          href: about.qmd
+        - text: "Contact us"
+          href: contact.qmd
+  sidebar:
+    - title: "About"
+      contents:
+        - about.qmd
+        - contact.qmd
+  page-navigation: true
+
+  back-to-top-navigation: false
+
+  page-footer:
+    background: "#000000"
+    left: ""
+    center:
+      - href: https://github.com/phuse-org/devops
+        icon: github
+        aria-label: GitHub
+    right: ""
+
+format:
+  html:
+    theme: [lux, styles.scss]
+    css: styles.css
+    toc: true
+    grid:
+      sidebar-width: 0px
+      body-width: 1000px
+      margin-width: 250px
+
+execute:
+  freeze: auto

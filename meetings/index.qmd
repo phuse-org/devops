@@ -1,0 +1,14 @@
+---
+pagetitle: Meetings | PharmaDevOps
+title: Meetings
+subtitle: "Meeting notes"
+search: true
+listing:
+  contents:
+  - minutes
+  - "!index.qmd"
+  sort: "date desc"
+  type: table
+---
+
+Meeting notes and minutes.

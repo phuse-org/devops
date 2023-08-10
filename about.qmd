@@ -1,0 +1,10 @@
+---
+title: "About"
+subtitle: All you need to know about the PharmDevOps Working Group.
+sidebar: false
+page-layout: article
+toc: false
+title-block-banner: true
+---
+
+Lorem ipsum dolor sit amet.

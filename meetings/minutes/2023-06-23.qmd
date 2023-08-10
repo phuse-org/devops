@@ -1,3 +1,11 @@
+---
+pagetitle: Meetings 1
+title: Meeting 1
+subtitle: "Meeting notes from the first meeting"
+date: 2023-06-23
+search: true
+---
+
 Meeting notes:
 
 Needed to kick off next meeting
@@ -6,7 +14,7 @@ Needed to kick off next meeting
 - [x] James to pass on linkedin stuff to PHUSE - push out kick off (August)
 - [x] Copy in admiral as starting point for template into this repo - Dinakar
 - [x] Curate list of links (other cicd tools relevant, trainings) - James
-- [x] PHUSE abstract (end of July) - Ben 
+- [x] PHUSE abstract (end of July) - Ben
 - [x] placeholder discussion for git flows - James
 - [x] what could the purpose of the hackathon? open discussion. Is a workshop better like the R/pharma? - James
 - [ ] make doodle for in 2 weeks - james
@@ -16,4 +24,4 @@ Aim in next meeting (pre-kickoff):
 1. Review/write abstract for PhUSE US Connect
 2. Work on website content
 
-- Internal servers? Gitlab self-hosted, and github enterprise, github SaaS 
+- Internal servers? Gitlab self-hosted, and github enterprise, github SaaS
