@@ -1,0 +1,30 @@
+[
+  {
+    "objectID": "meetings/index.html",
+    "href": "meetings/index.html",
+    "title": "Meetings",
+    "section": "",
+    "text": "Meeting notes and minutes.\n\n\n\n\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nJun 23, 2023\n\n\nMeeting 1\n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "meetings/minutes/2023-06-23.html",
+    "href": "meetings/minutes/2023-06-23.html",
+    "title": "Meeting 1",
+    "section": "",
+    "text": "Meeting notes:\nNeeded to kick off next meeting\n\nWhat format to use? (e.g. quarto template for site) Dinakar\nJames to pass on linkedin stuff to PHUSE - push out kick off (August)\nCopy in admiral as starting point for template into this repo - Dinakar\nCurate list of links (other cicd tools relevant, trainings) - James\nPHUSE abstract (end of July) - Ben\nplaceholder discussion for git flows - James\nwhat could the purpose of the hackathon? open discussion. Is a workshop better like the R/pharma? - James\nmake doodle for in 2 weeks - james\n\nAim in next meeting (pre-kickoff):\n\nReview/write abstract for PhUSE US Connect\nWork on website content\n\n\nInternal servers? Gitlab self-hosted, and github enterprise, github SaaS"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Lorem ipsum dolor sit amet."
+  },
+  {
+    "objectID": "contact.html",
+    "href": "contact.html",
+    "title": "Contact Us",
+    "section": "",
+    "text": "GitHub: @phuse-org/devops\nTwitter: @PHUSETwitta"
+  }
+]
