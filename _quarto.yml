@@ -12,10 +12,10 @@ website:
   repo-url: https://github.com/phuse-org/devops
   repo-actions: [edit, issue]
   navbar:
-    background: "#f0eeeb"
+    background: "#ffffff"
     logo: assets/PharmaDevOps.png
     logo-alt: "PharmaDevOps Brand"
-    title: false
+    title: true
     collapse-below: lg
     right:
       - meetings/index.qmd
