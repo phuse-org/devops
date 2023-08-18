@@ -1,0 +1,63 @@
+---
+title: "Generate pkgdown documentation"
+description: |
+  Automate creation and deployment of R package documentation
+categories:
+  - Documentation
+  - R
+author: Pharmaverse
+date: 2023-08-01
+image: https://pkgdown.r-lib.org/logo.png
+toc: true
+---
+
+:::{.callout-note style="margin-top: 0rem;" collapse="false"}
+## About the gh-action
+
+**Lifecycle stage:** Not reported 
+
+**Example of use:** [teal R package](https://github.com/insightsengineering/teal/blob/main/.github/workflows/docs.yaml)
+
+**Source:** Pharmaverse gh-action maintained by Roche/Genentech
+
+**Expected output:** Generate and deploy to gh-pages versioned documentation, and upload copy of documentation to release.
+:::
+
+## Why should I use this?
+
+`pkgdown` is the most common framework for rendering R package documentation into a an HTML website. 
+ Generating and uploading documentation manually makes it very easy for differences
+to be present 
+
+
+## How do I set it up?
+
+You can call this action via adding a call to this job in a github action. A minimal example 
+that runs this on commits to main is:
+
+```bash
+---
+name: Docs 📚
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  docs:
+    name: Pkgdown Docs 📚
+    uses: insightsengineering/r.pkg.template/.github/workflows/pkgdown.yaml@main
+    secrets:
+      REPO_GITHUB_TOKEN: ${{ secrets.REPO_GITHUB_TOKEN }}
+    with:
+      default-landing-page: latest-tag
+```
+
+## The deets
+
+If you have built docs locally in the past, you are probably aware that your git repo will balloon in size, as it stores a copy 
+of each piece version of every plot and image you have used in your documentation. This `gh-action` will help you avoid that, by 
+placing the versioned documentation into an orphan branch. Helping to keep your docs (a built artefact) seperate from your source code.
+
+The `gh-action` is well documented in-line, [and stored at this location](https://github.com/insightsengineering/r.pkg.template/blob/main/.github/workflows/pkgdown.yaml).

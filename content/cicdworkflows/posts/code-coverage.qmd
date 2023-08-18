@@ -1,0 +1,143 @@
+---
+title: "Code coverage"
+description: |
+  This workflow checks whether URLs embedded in code and documentation are valid. Invalid URLs result in workflow failures. 
+categories:
+  - Documentation
+  - Links
+author: Pharmaverse
+date: 2023-08-01
+image: https://covr.r-lib.org/reference/figures/logo.png
+toc: true
+---
+
+:::{.callout-note style="margin-top: 0rem;" collapse="false"}
+## About the gh-action
+
+**Lifecycle stage:** Not reported 
+
+**Example of use:** [admiral R package](https://github.com/pharmaverse/admiralci#code-coverage)
+
+**Source:** Pharmaverse gh-action maintained by Roche/Genentech
+
+**Expected output:** Badge (![Code
+Coverage](https://github.com/pharmaverse/admiralci/actions/workflows/code-coverage.yml/badge.svg)) or change pipeline depending on reported code coverage.
+:::
+
+## Why should I use this?
+
+This workflow measures code coverage for unit tests and reports the code
+coverage as a percentage of the *total number of lines covered by unit
+tests* vs. the *total number of lines in the codebase* in an R package.
+
+Using this github action gives you a badge that helps to show that the code is coverage. Calculating this 
+via CICD is useful as the amount of untested code can vary, e.g. a new feature is added but it is not tested. 
+
+It's important to note that code coverage is only telling you if a test exists, not that the test is 
+testing all that should be tested against that line of code. 
+
+For information on how to add testing to R packages, [R-pkgs.org](https://r-pkgs.org/testing-basics.html) covers 
+setting up tests with test that. 
+
+## How do I set it up?
+
+You can call this action via adding a call to this job in a github action. A minimal example 
+that runs this on commits to master is:
+
+> ..... Have a 'recomended' yaml like admiral does with common? 
+Then can link to that line of code in that gh-action file?
+
+> ....... How do the badges work with this one? The docs seem to contradict what is present in the admiral R package.
+
+## The deets
+
+The [`covr`](https://covr.r-lib.org/) R package is used to calculate the
+coverage.
+
+Report summaries and badges for coverage are generated using a series of
+other GitHub Actions.
+
+For this workflow to execute successfully, you will need to create an
+orphan branch called `badges` in your GitHub repository. You can do that
+using the following steps:
+
+```bash
+# Create orphan branch
+git checkout --orphan badges
+# Back up files
+mv .git /tmp/.git-backup
+# Remove everything else
+rm -rf * .*
+# Restore git files
+mv /tmp/.git-backup .git
+# Create a README file
+echo "# Badges" > README.md
+# Add, commit and push your new branch
+git add . && git commit -m "Init badges" && git push origin badges
+```
+
+---
+title: "Check code coverage"
+description: |
+  This workflow measures code coverage for unit tests and reports the code coverage as a percentage of the total number of lines covered by unit tests vs. the total number of lines in the codebase. 
+categories:
+  - Testing
+  - R
+author: Pharmaverse
+date: 2023-08-01
+image: https://covr.r-lib.org/reference/figures/logo.png
+toc: true
+---
+
+:::{.callout-note style="margin-top: 0rem;" collapse="false"}
+## About the gh-action
+
+**Lifecycle stage:** Not reported 
+
+**Example of use:** [admiral R package](https://github.com/pharmaverse/admiralci#links)
+
+**Source:** Pharmaverse gh-action maintained by Roche/Genentech
+
+**Expected output:** Stop or warn in pipeline if links are broken.
+:::
+
+## Why should I use this?
+
+As your documentation grows, it's likely the number of links present do as well. This
+gh-action helps to make sure that if you link to an external website, you can be informed 
+if that link stops working.
+
+## How do I set it up?
+
+You can call this action via adding a call to this job in a github action. A minimal example that runs this on PRs to `main` is:
+
+```bash
+---
+# Source: https://github.com/pharmaverse/admiralci
+# Common workflows designed for Admiral
+# but can be easily used by any other R package
+name: admiral CI/CD Workflows
+
+on:
+  push:
+    branches:
+      - main
+  # 'pull_request' events are triggered when PRs are
+  # created against one of these target branches.
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  links:
+    name: Links
+    uses: pharmaverse/admiralci/.github/workflows/links.yml@main
+    if: github.event_name == 'pull_request'
+```
+
+## The deets
+
+This gh-action uses lychee. If there are false positives, you can 
+create a `.lycheeignore` file. There is an example [here of how this is 
+done in `admiral`](https://github.com/pharmaverse/admiral/blob/devel/.lycheeignore).
+
