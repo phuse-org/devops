@@ -15,7 +15,7 @@ website:
     background: "#ffffff"
     logo: assets/PharmaDevOps.png
     logo-alt: "PharmaDevOps Brand"
-    title: true
+    #title: false
     collapse-below: lg
     right:
       - meetings/index.qmd

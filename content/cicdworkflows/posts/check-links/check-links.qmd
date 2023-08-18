@@ -1,0 +1,63 @@
+---
+title: "Check links"
+description: |
+  This workflow checks whether URLs embedded in code and documentation are valid. Invalid URLs result in workflow failures. 
+categories:
+  - Documentation
+  - Links
+author: Pharmaverse
+date: 2023-08-01
+image: 404.png
+toc: true
+---
+
+:::{.callout-note style="margin-top: 0rem;" collapse="false"}
+## About the gh-action
+
+**Lifecycle stage:** Not reported 
+
+**Example of use:** [admiral R package](https://github.com/pharmaverse/admiralci#links)
+
+**Source:** Pharmaverse gh-action maintained by Roche/Genentech
+
+**Expected output:** Fail the pipeline if a link is broken in your repo.
+:::
+
+## Why should I use this?
+
+As a codebase grows, it becomes more likely you will end up with a number of links in your documentation. 
+These links can over time stop working - and often you won't know till a user flags your links or broken.
+
+This `gh-action` lets you stay on top of broken links, by actively scanning for them.
+
+## How do I set it up?
+
+Below is an example of using this `gh-action` whenever someone tries to make PR into your `main` or `devel` branch.
+
+
+```bash
+---
+name: Docs 📚
+
+on:
+  push:
+    branches:
+      - main
+      - devel
+  pull_request:
+    branches:
+      - main
+      - devel
+
+jobs:
+  links:
+    name: Links
+    uses: pharmaverse/admiralci/.github/workflows/links.yml@main
+    if: github.event_name == 'pull_request'
+```
+
+## The deets
+
+This gh-action uses lychee. If you need to prevent false positive deadlinks stopping the 
+process, you can use a `.lycheeignore` file. There is an example of this file [from 
+admiral here](https://github.com/pharmaverse/admiral/blob/devel/.lycheeignore).

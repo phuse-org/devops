@@ -7,7 +7,7 @@ deployment and releases of R and Python codebases for clinical reporting
 
 ## Purpose
 
-In 2023 PHUSE released the Open Source E2E guidance (https://github.com/phuse-org/E2E-OS-Guidance),
+In 2023 PHUSE released the [Open Source E2E guidance](https://github.com/phuse-org/E2E-OS-Guidance),
 providing high level guidance and talking points for using and collaborating on open source code, with a focus
 on R packages. This guidance referenced several tools, but stops short of creating an annotated library of
 Continuous Integration and Continuous Delivery (CICD) tools to make developers more efficient and code more

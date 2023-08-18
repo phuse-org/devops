@@ -1,0 +1,14 @@
+---
+pagetitle: Meeting 2
+title: Meeting 2
+subtitle: "Meeting notes"
+date: 2023-08-11
+search: true
+---
+
+Meeting actions:
+
+- Theme decided on
+- Dinakar to draft and share abstract
+- James to load in some example content
+- James to talk to ROpenSci (also include link outs on how to use the r-universe?)

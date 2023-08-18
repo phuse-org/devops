@@ -8,7 +8,78 @@ search: false
 description: The home of the PharmaDevOps PhUSE Working Group.
 image: assets/PharmaDevOps.png
 
+listing:
+  - id: cicdworkflows
+    contents: 
+    - /content/cicdworkflows
+    - "!index.qmd"
+    sort: "date desc"
+    type: grid
+    categories: true
+    sort-ui: false
+    filter-ui: false
+    max-items: 24
+    feed: false
+
 toc: false
 ---
 
-Welcome to the home of **PharmaDevOps**.
+<!--# Top welcome box -->
+
+::: {.content-container}
+::: {.top-story .blue-background}
+
+::: grid
+::: {.g-col-12 .g-col-lg-8 .top-story-text}
+## Welcome to the home of **PharmaDevOps**
+This PHUSE working group is focussed on ensuring package authors (with an initial focus on R)
+can easily add CICD to pharmaverse R packages (the next-generation of clinical reporting tools) 
+and related biostastical packages.
+
+Our aim is not to re-invent the wheel, but instead provide context and fill in the gaps within
+the domain of devops, by data scientists, in late-stage drug development.
+:::
+::: {.g-col-12 .g-col-lg-4 .top-story-img}
+![](assets/PharmaDevOps.png){width=70% fig-align="center"}
+:::
+:::
+
+:::
+:::
+
+<!--# Notes on getting started -->
+::: {.content-container}
+::: {.top-story}
+
+::: grid
+::: {.g-col-12 .top-story-text}
+## Getting started with CICD
+A recomended plan for success in implenting CICD on your project is to:
+
+- Read this post on the general anatomy of a `gh-action` [TODO]
+- Browse our recomended `gh-action`'s below
+- Review this case study of CICD is used in `admiral`
+- Implement CICD on your git repo!
+
+We've also collected togther this list of external learning resources here: [TODO]
+:::
+:::
+
+:::
+:::
+
+
+<!--# Latest add-gh actions -->
+
+::: {.content-container}
+::: {.listing-block}
+<a href="/content/cicdworkflows/index.qmd">
+
+## Recomended CICD
+</a> 
+
+::: {#cicdworkflows}
+:::
+
+:::
+:::
