@@ -1,7 +1,24 @@
 [
   {
+    "listing": "/index.html",
+    "items": [
+      "/content/cicdworkflows/posts/code-coverage.html",
+      "/content/cicdworkflows/posts/pkgdown.html",
+      "/content/cicdworkflows/posts/check-links/check-links.html"
+    ]
+  },
+  {
+    "listing": "/content/cicdworkflows/index.html",
+    "items": [
+      "/content/cicdworkflows/posts/code-coverage.html",
+      "/content/cicdworkflows/posts/pkgdown.html",
+      "/content/cicdworkflows/posts/check-links/check-links.html"
+    ]
+  },
+  {
     "listing": "/meetings/index.html",
     "items": [
+      "/meetings/minutes/2023-08-11.html",
       "/meetings/minutes/2023-06-23.html"
     ]
   }
