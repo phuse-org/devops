@@ -5,7 +5,6 @@ description: |
 categories:
   - Documentation
   - R
-author: Pharmaverse
 date: 2023-08-01
 image: https://pkgdown.r-lib.org/logo.png
 toc: true
@@ -14,11 +13,7 @@ toc: true
 :::{.callout-note style="margin-top: 0rem;" collapse="false"}
 ## About the gh-action
 
-**Lifecycle stage:** Not reported 
-
 **Example of use:** [teal R package](https://github.com/insightsengineering/teal/blob/main/.github/workflows/docs.yaml)
-
-**Source:** Pharmaverse gh-action maintained by Roche/Genentech
 
 **Expected output:** Generate and deploy to gh-pages versioned documentation, and upload copy of documentation to release.
 :::

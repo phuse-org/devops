@@ -1,7 +1,7 @@
 ---
-pagetitle: CICD workflows
-title: CICD workflows
-subtitle: Digests of new papers in the data science literature
+pagetitle: Minimum CICD workflows
+title: Minimum CICD workflows
+subtitle: Key CICD workflows we expect should be used across all packages in production
 search: false
 listing:
   contents: posts

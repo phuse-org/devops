@@ -1,0 +1,61 @@
+---
+title: "R CMD Check"
+description: |
+  Ensure that when you release your package, all the unit tests are passing and it works in a clean environment. 
+categories:
+  - Testing
+date: 2023-08-23
+image: r-cmd-check.png
+toc: true
+---
+
+:::{.callout-note style="margin-top: 0rem;" collapse="false"}
+## About the gh-action
+
+[**Link to `gh-action`**](https://github.com/pharmaverse/admiralci/blob/main/.github/workflows/r-cmd-check.yml)
+
+**Example of use:** ADD
+
+**Expected output:** Fail the pipeline if `R CMD Check` fails.
+:::
+
+## Why should I use this?
+
+`R CMD Check` has [around 50 checks](https://r-pkgs.org/R-CMD-check.html), but the general jist is it will check your package is fit to install, and as part of that process run the unit tests. In many companies, you will 
+be running potentially multiple versions of R in parrallel. To reflect 
+that, this gh-action is updated to run across the last 3 R major versions, 
+using a snapshot from the Posit Public Manager that reflects a relevant time frame for when that R version was latest.
+
+If you have dependencies on other pharmaverse packages, it's likely you will also want to run `R CMD Check` using CRAN today + the bleading edge of the pharmaverse (which may be pre-CRAN) via pointing at their r-universe. If this is the case, please see the advanced usage below.
+
+## How do I set it up?
+
+Below is an example of using this `gh-action` whenever someone tries to make PR into your `main` or `devel` branch.
+
+
+```bash
+---
+name: R CMD Check
+
+on:
+  push:
+    branches:
+      - main
+      - devel
+  pull_request:
+    branches:
+      - main
+      - devel
+
+jobs:
+  check:
+    name: Check
+    uses: pharmaverse/admiralci/.github/workflows/r-cmd-check.yml@main
+    if: github.event_name == 'pull_request'
+```
+
+## The deets
+
+## Advanced use
+
+TODO: Add here how to also run against pharmaverse's r-universe latest & the latest release of PPM packages.

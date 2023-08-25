@@ -9,9 +9,20 @@ description: The home of the PharmaDevOps PhUSE Working Group.
 image: assets/PharmaDevOps.png
 
 listing:
-  - id: cicdworkflows
+  - id: cicdworkflows-minimum
     contents: 
-    - /content/cicdworkflows
+    - /content/cicdworkflows-minimum
+    - "!index.qmd"
+    sort: "date desc"
+    type: grid
+    categories: true
+    sort-ui: false
+    filter-ui: false
+    max-items: 24
+    feed: false
+  - id: cicdworkflows-recommend
+    contents: 
+    - /content/cicdworkflows-recommend
     - "!index.qmd"
     sort: "date desc"
     type: grid
@@ -63,14 +74,14 @@ A recomended plan for success in implenting CICD on your project is to:
 
 We've also collected togther this list of external learning resources here: [TODO]
 
+<!--# Notes on getting started 
 Provide a master version (e.g. here's a single file with all the recomended) [TODO]
 How the triggers work is confusing, and changing CICD based on what's happening (PR to specific branch) - deeper dive on how to automate checks in workflow, e.g. catch bugs before main [TODO]
 Ensure we put upfront what the benefit is for each recomended (e.g. coverage gives you a badge, version bumping updates your description file, keeping built artifacts like docs out of the main code, etc) [TODO]
 Flag important parameters with notes in the gh-action code so users can understand what's going on [TODO]
 Enabling advanced workflows - e.g. test against current prod branch of the pharmaverse r-universe [TODO]
 Should we have badge if they meet minimum cicd? [TODO]
-
-Keep more arbitrary seperate from recomended, e.g. have 'core/minimum' vs 'extended recomended' - e.g. linting is not a something that's usually a high priority. Relationship of going to CRAN against core? Common workflow would be to increase CICD as project / contributors grow [todo]
+-->
 
 :::
 :::
@@ -83,12 +94,35 @@ Keep more arbitrary seperate from recomended, e.g. have 'core/minimum' vs 'exten
 
 ::: {.content-container}
 ::: {.listing-block}
-<a href="/content/cicdworkflows/index.qmd">
+<a href="/content/cicdworkflows-minimum/index.qmd">
 
-## Recomended CICD
+## Minimum CICD
+
+The following CICD is what we consider a minimum bar for a 
+package on the pharmaverse. These CICD tools are focussed on 
+ensuring your package works, and documentation matches the code.
+
+
 </a> 
 
-::: {#cicdworkflows}
+::: {#cicdworkflows-minimum}
+:::
+
+:::
+:::
+
+::: {.content-container}
+::: {.listing-block}
+<a href="/content/cicdworkflows-recommend/index.qmd">
+
+## Recommended CICD
+
+The following CICD are tools we feel make your life developing and 
+releasing robust code easier. 
+
+</a> 
+
+::: {#cicdworkflows-recommend}
 :::
 
 :::
