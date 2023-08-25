@@ -2,42 +2,50 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://phuse-org.github.io/devops/index.html</loc>
-    <lastmod>2023-08-24T17:27:39.902Z</lastmod>
+    <lastmod>2023-08-25T20:36:24.067Z</lastmod>
   </url>
   <url>
     <loc>https://phuse-org.github.io/devops/contact.html</loc>
-    <lastmod>2023-08-24T17:27:40.826Z</lastmod>
+    <lastmod>2023-08-25T20:36:25.923Z</lastmod>
   </url>
   <url>
-    <loc>https://phuse-org.github.io/devops/content/cicdworkflows/index.html</loc>
-    <lastmod>2023-08-24T17:27:41.802Z</lastmod>
+    <loc>https://phuse-org.github.io/devops/content/cicdworkflows-minimum/index.html</loc>
+    <lastmod>2023-08-25T20:36:26.671Z</lastmod>
   </url>
   <url>
-    <loc>https://phuse-org.github.io/devops/content/cicdworkflows/posts/code-coverage.html</loc>
-    <lastmod>2023-08-24T17:27:42.902Z</lastmod>
+    <loc>https://phuse-org.github.io/devops/content/cicdworkflows-minimum/posts/code-coverage.html</loc>
+    <lastmod>2023-08-25T20:36:27.623Z</lastmod>
   </url>
   <url>
-    <loc>https://phuse-org.github.io/devops/content/cicdworkflows/posts/pkgdown.html</loc>
-    <lastmod>2023-08-24T17:27:43.810Z</lastmod>
+    <loc>https://phuse-org.github.io/devops/content/cicdworkflows-minimum/posts/r-cmd-check/r-cmd-check.html</loc>
+    <lastmod>2023-08-25T20:36:28.403Z</lastmod>
   </url>
   <url>
-    <loc>https://phuse-org.github.io/devops/content/cicdworkflows/posts/check-links/check-links.html</loc>
-    <lastmod>2023-08-24T17:27:45.030Z</lastmod>
+    <loc>https://phuse-org.github.io/devops/content/cicdworkflows-minimum/posts/pkgdown.html</loc>
+    <lastmod>2023-08-25T20:36:29.207Z</lastmod>
+  </url>
+  <url>
+    <loc>https://phuse-org.github.io/devops/content/cicdworkflows-recommend/index.html</loc>
+    <lastmod>2023-08-25T20:36:29.711Z</lastmod>
+  </url>
+  <url>
+    <loc>https://phuse-org.github.io/devops/content/cicdworkflows-recommend/posts/check-links/check-links.html</loc>
+    <lastmod>2023-08-25T20:36:31.047Z</lastmod>
   </url>
   <url>
     <loc>https://phuse-org.github.io/devops/meetings/index.html</loc>
-    <lastmod>2023-08-24T17:27:45.542Z</lastmod>
+    <lastmod>2023-08-25T20:36:31.463Z</lastmod>
   </url>
   <url>
     <loc>https://phuse-org.github.io/devops/meetings/minutes/2023-06-23.html</loc>
-    <lastmod>2023-08-24T17:27:45.986Z</lastmod>
+    <lastmod>2023-08-25T20:36:31.899Z</lastmod>
   </url>
   <url>
     <loc>https://phuse-org.github.io/devops/meetings/minutes/2023-08-11.html</loc>
-    <lastmod>2023-08-24T17:27:46.394Z</lastmod>
+    <lastmod>2023-08-25T20:36:32.263Z</lastmod>
   </url>
   <url>
     <loc>https://phuse-org.github.io/devops/about.html</loc>
-    <lastmod>2023-08-24T17:27:46.834Z</lastmod>
+    <lastmod>2023-08-25T20:36:32.648Z</lastmod>
   </url>
 </urlset>

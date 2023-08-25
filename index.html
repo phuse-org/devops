@@ -65,7 +65,7 @@ ul.task-list li input[type="checkbox"] {
 <script>
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-cicdworkflows .list');
+    const listingTargetEl = window.document.querySelector('#listing-cicdworkflows-minimum .list');
     if (!listingTargetEl) {
       // No listing discovered, do not attach.
       return; 
@@ -78,7 +78,35 @@ ul.task-list li input[type="checkbox"] {
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-cicdworkflows'] = new List('listing-cicdworkflows', options);
+    window['quarto-listings']['listing-cicdworkflows-minimum'] = new List('listing-cicdworkflows-minimum', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-cicdworkflows-recommend .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-cicdworkflows-recommend'] = new List('listing-cicdworkflows-recommend', options);
 
     if (window['quarto-listing-loaded']) {
       window['quarto-listing-loaded']();
@@ -198,8 +226,14 @@ ul.task-list li input[type="checkbox"] {
 <li>Implement CICD on your git repo!</li>
 </ul>
 <p>We’ve also collected togther this list of external learning resources here: [TODO]</p>
-<p>Provide a master version (e.g.&nbsp;here’s a single file with all the recomended) [TODO] How the triggers work is confusing, and changing CICD based on what’s happening (PR to specific branch) - deeper dive on how to automate checks in workflow, e.g.&nbsp;catch bugs before main [TODO] Ensure we put upfront what the benefit is for each recomended (e.g.&nbsp;coverage gives you a badge, version bumping updates your description file, keeping built artifacts like docs out of the main code, etc) [TODO] Flag important parameters with notes in the gh-action code so users can understand what’s going on [TODO] Enabling advanced workflows - e.g.&nbsp;test against current prod branch of the pharmaverse r-universe [TODO] Should we have badge if they meet minimum cicd? [TODO]</p>
-<p>Keep more arbitrary seperate from recomended, e.g.&nbsp;have ‘core/minimum’ vs ‘extended recomended’ - e.g.&nbsp;linting is not a something that’s usually a high priority. Relationship of going to CRAN against core? Common workflow would be to increase CICD as project / contributors grow [todo]</p>
+<!--# Notes on getting started 
+Provide a master version (e.g. here's a single file with all the recomended) [TODO]
+How the triggers work is confusing, and changing CICD based on what's happening (PR to specific branch) - deeper dive on how to automate checks in workflow, e.g. catch bugs before main [TODO]
+Ensure we put upfront what the benefit is for each recomended (e.g. coverage gives you a badge, version bumping updates your description file, keeping built artifacts like docs out of the main code, etc) [TODO]
+Flag important parameters with notes in the gh-action code so users can understand what's going on [TODO]
+Enabling advanced workflows - e.g. test against current prod branch of the pharmaverse r-universe [TODO]
+Should we have badge if they meet minimum cicd? [TODO]
+-->
 </section>
 </div>
 </div>
@@ -207,13 +241,44 @@ ul.task-list li input[type="checkbox"] {
 <!--# Latest add-gh actions -->
 <div class="content-container">
 <div class="listing-block">
-<p><a href="./content/cicdworkflows/index.html"></a></p><a href="./content/cicdworkflows/index.html">
-<h2 id="recomended-cicd">Recomended CICD</h2>
-</a><p><a href="./content/cicdworkflows/index.html"></a></p>
-<div id="listing-cicdworkflows" class="quarto-listing quarto-listing-container-grid">
+<p><a href="./content/cicdworkflows-minimum/index.html"></a></p><a href="./content/cicdworkflows-minimum/index.html">
+<h2 id="minimum-cicd">Minimum CICD</h2>
+<p>The following CICD is what we consider a minimum bar for a package on the pharmaverse. These CICD tools are focussed on ensuring your package works, and documentation matches the code.</p>
+</a><p><a href="./content/cicdworkflows-minimum/index.html"></a></p>
+<div id="listing-cicdworkflows-minimum" class="quarto-listing quarto-listing-container-grid">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Documentation,Links" data-listing-date-sort="1690848000000" data-listing-file-modified-sort="1692898052778" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
-<a href="./content/cicdworkflows/posts/code-coverage.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="0" data-categories="Testing" data-listing-date-sort="1692748800000" data-listing-file-modified-sort="1692995779370" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<a href="./content/cicdworkflows-minimum/posts/r-cmd-check/r-cmd-check.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./content/cicdworkflows-minimum/posts/r-cmd-check/r-cmd-check.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+R CMD Check
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Testing'); return false;">
+Testing
+</div>
+</div>
+<div class="card-text listing-description">
+<p>Ensure that when you release your package, all the unit tests are passing and it works in a clean environment.</p>
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+
+</div>
+<div class="listing-date">
+Aug 23, 2023
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="1" data-categories="Documentation,Links" data-listing-date-sort="1690848000000" data-listing-file-modified-sort="1692995779370" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
+<a href="./content/cicdworkflows-minimum/posts/code-coverage.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
 <img src="https://covr.r-lib.org/reference/figures/logo.png" class="thumbnail-image card-img" style="height: 150px;">
@@ -235,7 +300,7 @@ Links
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
-Pharmaverse
+
 </div>
 <div class="listing-date">
 Aug 1, 2023
@@ -245,8 +310,8 @@ Aug 1, 2023
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="Documentation,R" data-listing-date-sort="1690848000000" data-listing-file-modified-sort="1692898052778" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
-<a href="./content/cicdworkflows/posts/pkgdown.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="2" data-categories="Documentation,R" data-listing-date-sort="1690848000000" data-listing-file-modified-sort="1692995779370" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<a href="./content/cicdworkflows-minimum/posts/pkgdown.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
 <img src="https://pkgdown.r-lib.org/logo.png" class="thumbnail-image card-img" style="height: 150px;">
@@ -268,7 +333,7 @@ R
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
-Pharmaverse
+
 </div>
 <div class="listing-date">
 Aug 1, 2023
@@ -278,11 +343,26 @@ Aug 1, 2023
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="Documentation,Links" data-listing-date-sort="1690848000000" data-listing-file-modified-sort="1692898052778" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
-<a href="./content/cicdworkflows/posts/check-links/check-links.html" class="quarto-grid-link">
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
+</div>
+</div>
+<div class="content-container">
+<div class="listing-block">
+<p><a href="./content/cicdworkflows-recommend/index.html"></a></p><a href="./content/cicdworkflows-recommend/index.html">
+<h2 id="recommended-cicd">Recommended CICD</h2>
+<p>The following CICD are tools we feel make your life developing and releasing robust code easier.</p>
+</a><p><a href="./content/cicdworkflows-recommend/index.html"></a></p>
+<div id="listing-cicdworkflows-recommend" class="quarto-listing quarto-listing-container-grid">
+<div class="list grid quarto-listing-cols-3">
+<div class="g-col-1" data-index="0" data-categories="Documentation,Links" data-listing-date-sort="1690848000000" data-listing-file-modified-sort="1692995779370" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<a href="./content/cicdworkflows-recommend/posts/check-links/check-links.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img src="./content/cicdworkflows/posts/check-links/404.png" class="thumbnail-image card-img" style="height: 150px;">
+<img src="./content/cicdworkflows-recommend/posts/check-links/404.png" class="thumbnail-image card-img" style="height: 150px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -301,7 +381,7 @@ Links
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
-Pharmaverse
+
 </div>
 <div class="listing-date">
 Aug 1, 2023

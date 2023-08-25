@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2023-08-01">
+<meta name="description" content="Automate creation and deployment of R package documentation">
 
-<title>PharmaDevOps - About</title>
+<title>PharmaDevOps - Generate pkgdown documentation</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,27 +22,60 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./contact.html" rel="next">
-<link href="./assets/PharmaDevOps.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../assets/PharmaDevOps.png" rel="icon" type="image/png">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -62,29 +97,29 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="PharmaDevOps - About">
-<meta property="og:description" content="All you need to know about the PharmDevOps Working Group.">
-<meta property="og:image" content="https://phuse-org.github.io/devops/assets/people/dinakar.jpeg">
+<link rel="stylesheet" href="../../../styles.css">
+<meta property="og:title" content="PharmaDevOps - Generate pkgdown documentation">
+<meta property="og:description" content="Automate creation and deployment of R package documentation">
+<meta property="og:image" content="https://pkgdown.r-lib.org/logo.png">
 <meta property="og:site-name" content="PharmaDevOps">
-<meta name="twitter:title" content="PharmaDevOps - About">
-<meta name="twitter:description" content="All you need to know about the PharmDevOps Working Group.">
-<meta name="twitter:image" content="https://phuse-org.github.io/devops/assets/people/dinakar.jpeg">
+<meta name="twitter:title" content="PharmaDevOps - Generate pkgdown documentation">
+<meta name="twitter:description" content="Automate creation and deployment of R package documentation">
+<meta name="twitter:image" content="https://pkgdown.r-lib.org/logo.png">
 <meta name="twitter:site" content="@PHUSETwitta">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./assets/PharmaDevOps.png" alt="PharmaDevOps Brand" class="navbar-logo">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../assets/PharmaDevOps.png" alt="PharmaDevOps Brand" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">PharmaDevOps</span>
     </a>
   </div>
@@ -95,7 +130,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./meetings/index.html" rel="" target="">
+    <a class="nav-link" href="../../../meetings/index.html" rel="" target="">
  <span class="menu-text">Meetings</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -104,11 +139,11 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-about-pharmadevops">    
         <li>
-    <a class="dropdown-item" href="./about.html" rel="" target="">
+    <a class="dropdown-item" href="../../../about.html" rel="" target="">
  <span class="dropdown-text">Who we are</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./contact.html" rel="" target="">
+    <a class="dropdown-item" href="../../../contact.html" rel="" target="">
  <span class="dropdown-text">Contact us</span></a>
   </li>  
     </ul>
@@ -119,70 +154,134 @@ ul.task-list li input[type="checkbox"] {
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Generate pkgdown documentation</li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body">
-      <h1 class="title">About</h1>
-            <p class="subtitle lead">All you need to know about the PharmDevOps Working Group.</p>
-                      </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta">
-
-      
-    
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../contact.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Contact Us</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#why-should-i-use-this" id="toc-why-should-i-use-this" class="nav-link active" data-scroll-target="#why-should-i-use-this">Why should I use this?</a></li>
+  <li><a href="#how-do-i-set-it-up" id="toc-how-do-i-set-it-up" class="nav-link" data-scroll-target="#how-do-i-set-it-up">How do I set it up?</a></li>
+  <li><a href="#the-deets" id="toc-the-deets" class="nav-link" data-scroll-target="#the-deets">The deets</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/phuse-org/devops/edit/main/content/cicdworkflows-minimum/posts/pkgdown.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/phuse-org/devops/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+    </div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Generate pkgdown documentation</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Documentation</div>
+    <div class="quarto-category">R</div>
+  </div>
+  </div>
 
-
-
-<div class="quarto-layout-panel">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div id="first-column" class="quarto-layout-cell" style="flex-basis: 20.0%;justify-content: center;">
-<p><img src="assets/people/dinakar.jpeg" class="img-fluid"></p>
-</div>
-<div id="second-column" class="quarto-layout-cell" style="flex-basis: 80.0%;justify-content: center;">
-<p><strong>Dinakar Kulkanari</strong></p>
-<p>Dinakar is the lead of the <em>IDR</em> team at Roche/Genentech in Data &amp; Statistical Sciences, and the general architect of Roche’s strategy for improving businesss developer efficiency, and ensuring we have robust release processes. He’s the data scientist’s go-to person for all things devops.</p>
-</div>
-</div>
-</div>
-<div class="quarto-layout-panel">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div id="first-column" class="quarto-layout-cell" style="flex-basis: 20.0%;justify-content: center;">
-<p><img src="assets/people/ben.jpeg" class="img-fluid"></p>
-</div>
-<div id="second-column" class="quarto-layout-cell" style="flex-basis: 80.0%;justify-content: center;">
-<p><strong>Ben Straub</strong></p>
-<p>Ben Straub is a Principal Programmer at GlaxoSmithKline. You can’t spend much time in the pharmaverse without getting to know Ben and his passion for collaboration. Ben was an instrumental anchor in tying CICD to value in <code>admiral</code>, and is now lending his expertise to guide <code>PharmaDevOps</code>.</p>
-</div>
-</div>
-</div>
-<div class="quarto-layout-panel">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div id="first-column" class="quarto-layout-cell" style="flex-basis: 20.0%;justify-content: center;">
-<p><img src="assets/people/james.jpeg" class="img-fluid"></p>
-</div>
-<div id="second-column" class="quarto-layout-cell" style="flex-basis: 80.0%;justify-content: center;">
-<p><strong>James Black</strong></p>
-<p>James Black is a Senior Director, Insights Engineering, at Roche/Genentech in Data &amp; Statistical Sciences. Via sponsoring the Insights Codebase, and being forced to learn daily as the PO/BO of the Clinical and RWE/PHC Scientific Computing Environments respectively, he has a niave passion for tools that make our data scientists more efficient at writing great packages.</p>
-</div>
-</div>
+<div>
+  <div class="description">
+    <p>Automate creation and deployment of R package documentation</p>
+  </div>
 </div>
 
 
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">August 1, 2023</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<div class="callout callout-style-default callout-note callout-titled" style="margin-top: 0rem;">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+About the gh-action
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p><strong>Example of use:</strong> <a href="https://github.com/insightsengineering/teal/blob/main/.github/workflows/docs.yaml">teal R package</a></p>
+<p><strong>Expected output:</strong> Generate and deploy to gh-pages versioned documentation, and upload copy of documentation to release.</p>
+</div>
+</div>
+</div>
+<section id="why-should-i-use-this" class="level2">
+<h2 class="anchored" data-anchor-id="why-should-i-use-this">Why should I use this?</h2>
+<p><code>pkgdown</code> is the most common framework for rendering R package documentation into a an HTML website. Generating and uploading documentation manually makes it very easy for differences to be present</p>
+</section>
+<section id="how-do-i-set-it-up" class="level2">
+<h2 class="anchored" data-anchor-id="how-do-i-set-it-up">How do I set it up?</h2>
+<p>You can call this action via adding a call to this job in a github action. A minimal example that runs this on commits to main is:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">name:</span> Docs 📚</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">on:</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="ex">push:</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="ex">branches:</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>      <span class="ex">-</span> main</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="ex">jobs:</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="ex">docs:</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="ex">name:</span> Pkgdown Docs 📚</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="ex">uses:</span> insightsengineering/r.pkg.template/.github/workflows/pkgdown.yaml@main</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="ex">secrets:</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>      <span class="ex">REPO_GITHUB_TOKEN:</span> <span class="va">${</span><span class="er">{ secrets.REPO_GITHUB_TOKEN </span><span class="va">}</span>}</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="ex">with:</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>      <span class="ex">default-landing-page:</span> latest-tag</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="the-deets" class="level2">
+<h2 class="anchored" data-anchor-id="the-deets">The deets</h2>
+<p>If you have built docs locally in the past, you are probably aware that your git repo will balloon in size, as it stores a copy of each piece version of every plot and image you have used in your documentation. This <code>gh-action</code> will help you avoid that, by placing the versioned documentation into an orphan branch. Helping to keep your docs (a built artefact) seperate from your source code.</p>
+<p>The <code>gh-action</code> is well documented in-line, <a href="https://github.com/insightsengineering/r.pkg.template/blob/main/.github/workflows/pkgdown.yaml">and stored at this location</a>.</p>
+
+
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -418,15 +517,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./contact.html" class="pagination-link">
-        <span class="nav-page-text">Contact Us</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
+<script src="https://giscus.app/client.js" data-repo="realworlddatascience/realworlddatascience.github.io" data-repo-id="R_kgDOILnnig" data-category="General" data-category-id="DIC_kwDOILnnis4CSt2s" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
+</script>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -442,7 +534,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </a>
   </li>  
 </ul>
-    <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/phuse-org/devops/edit/main/about.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/phuse-org/devops/issues/new" class="toc-action">Report an issue</a></p></div></div></div>
+    </div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
