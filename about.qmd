@@ -7,4 +7,35 @@ toc: false
 title-block-banner: true
 ---
 
-Lorem ipsum dolor sit amet.
+:::: {layout="[ 20, 80 ]"}
+::: {#first-column}
+![](assets/people/dinakar.jpeg)
+:::
+::: {#second-column}
+**Dinakar Kulkanari**
+
+Dinakar is the lead of the *IDR* team at Roche/Genentech in Data & Statistical Sciences, and the general architect of Roche's strategy for improving businesss developer efficiency, and ensuring we have robust release processes. He's the data scientist's go-to person for all things devops.
+:::
+::::
+
+:::: {layout="[ 20, 80 ]"}
+::: {#first-column}
+![](assets/people/ben.jpeg)
+:::
+::: {#second-column}
+**Ben Straub**
+
+Ben Straub is a Principal Programmer at GlaxoSmithKline. You can't spend much time in the pharmaverse without getting to know Ben and his passion for collaboration. Ben was an instrumental anchor in tying CICD to value in `admiral`, and is now lending his expertise to guide `PharmaDevOps`.
+:::
+::::
+
+:::: {layout="[ 20, 80 ]"}
+::: {#first-column}
+![](assets/people/james.jpeg)
+:::
+::: {#second-column}
+**James Black**
+
+James Black is a Senior Director, Insights Engineering, at Roche/Genentech in Data & Statistical Sciences. Via sponsoring the Insights Codebase, and being forced to learn daily as the PO/BO of the Clinical and RWE/PHC Scientific Computing Environments respectively, he has a niave passion for tools that make our data scientists more efficient at writing great packages.
+:::
+::::
