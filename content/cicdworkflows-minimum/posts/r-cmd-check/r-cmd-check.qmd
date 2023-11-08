@@ -30,7 +30,7 @@ If you have dependencies on other pharmaverse packages, it's likely you will als
 
 ## How do I set it up?
 
-Below is an example of using this `gh-action` whenever someone tries to make PR into your `main` or `devel` branch.
+Below is an example of using this `gh-action` whenever someone tries to make PR into your `main` or `devel` branch or updates the branch. We recomend you use this on both `main` and `devel` branches, as it will help you catch issues before they get into your main branch.
 
 
 ```bash

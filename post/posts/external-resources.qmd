@@ -1,0 +1,11 @@
+---
+pagetitle: refs
+title: External references
+subtitle: "A list of useful external references"
+date: 2023-10-23
+search: true
+---
+
+* [gh-action documention from GitHub](https://docs.github.com/en/actions)
+* [Tidyverse post on CICD for R devs](https://www.tidyverse.org/blog/2022/06/actions-2-0-0/)
+

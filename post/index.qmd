@@ -1,0 +1,12 @@
+---
+pagetitle: Posts | PharmaDevOps
+title: Posts
+subtitle: "Ad-hoc notes and posts"
+search: true
+listing:
+  contents:
+  - posts
+  - "!index.qmd"
+  sort: "date desc"
+  type: default
+---

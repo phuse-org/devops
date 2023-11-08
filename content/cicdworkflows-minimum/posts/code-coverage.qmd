@@ -26,7 +26,7 @@ coverage as a percentage of the *total number of lines covered by unit
 tests* vs. the *total number of lines in the codebase* in an R package.
 
 Using this github action gives you a badge that helps to show that the code is coverage. Calculating this 
-via CICD is useful as the amount of untested code can vary, e.g. a new feature is added but it is not tested. 
+via CICD is useful as the amount of untested code can vary, e.g. a new feature is added but it is not tested. People often use this metric as an indicator of code quality and maturity.
 
 It's important to note that code coverage is only telling you if a test exists, not that the test is 
 testing all that should be tested against that line of code. 
