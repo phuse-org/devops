@@ -1,0 +1,15 @@
+---
+pagetitle: Enhanced CICD workflows
+title: Enhanced CICD workflows
+subtitle: CICD workflows for power users
+search: false
+listing:
+  contents: posts
+  sort: "date desc"
+  type: grid
+  categories: true
+  sort-ui: true
+  filter-ui: true
+  page-size: 12
+comments: false
+---

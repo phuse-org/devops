@@ -31,6 +31,17 @@ listing:
     filter-ui: false
     max-items: 24
     feed: false
+  - id: cicdworkflows-enhanced
+    contents: 
+    - /content/cicdworkflows-enhanced
+    - "!index.qmd"
+    sort: "date desc"
+    type: grid
+    categories: true
+    sort-ui: false
+    filter-ui: false
+    max-items: 24
+    feed: false
 
 toc: false
 ---
@@ -65,14 +76,23 @@ the domain of devops, by data scientists, in late-stage drug development.
 ::: grid
 ::: {.g-col-12 .top-story-text}
 ## Getting started with CICD
+
+In this guidance, you'll see a number of `gh-actions` that you can use to implement CICD on your project. We have categorised these into three groups:
+
+- *Minimum CICD*: These are the minimum CICD tools we recommend for all packages on the pharmaverse. These CICD tools are focussed on ensuring your package works, and documentation matches the code.
+- *Recommended CICD*: These are tools we feel make your life developing and releasing robust code easier.
+- *Enhanced CICD*: These are tools are option tools for power users, or those with specific needs.
+
+Each CICD action is described via a common pattern, with an emphasis on why we recommend it, and how to use it.
+
 A recomended plan for success in implenting CICD on your project is to:
 
-- Read this post on the general anatomy of a `gh-action` [TODO]
+- [Read this post](post/posts/gh-actions.html) on the general anatomy of a `gh-action`
 - Browse our recomended `gh-action`'s below
 - Review this case study of CICD is used in `admiral`
 - Implement CICD on your git repo!
 
-We've also collected togther this list of external learning resources here: [TODO]
+We've also collected togther [this list of external learning resources](post/posts/external-resources.html).
 
 <!--# Notes on getting started 
 Provide a master version (e.g. here's a single file with all the recomended) [TODO]
@@ -123,6 +143,22 @@ releasing robust code easier.
 </a> 
 
 ::: {#cicdworkflows-recommend}
+:::
+
+:::
+:::
+
+::: {.content-container}
+::: {.listing-block}
+<a href="/content/cicdworkflows-enhanced/index.qmd">
+
+## Enhanced CICD
+
+The following CICD are tools are option tools for power users. 
+
+</a> 
+
+::: {#cicdworkflows-enhanced}
 :::
 
 :::

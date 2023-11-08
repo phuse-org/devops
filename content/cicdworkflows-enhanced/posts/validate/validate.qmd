@@ -1,21 +1,22 @@
 ---
-title: "Check links"
+title: "theValidator"
 description: |
-  This workflow checks whether URLs embedded in code and documentation are valid. Invalid URLs result in workflow failures. 
+  This workflow will take your documentation, and link it to unit testing, creating a report that links requirements (documentation) to tests of those requirements. 
 categories:
+  - Testing
   - Documentation
-  - Links
+  - Validation
 date: 2023-08-01
-image: 404.png
+image: validate.jpg
 toc: true
 ---
 
 :::{.callout-note style="margin-top: 0rem;" collapse="false"}
 ## About the gh-action
 
-**Example of use:** [admiral R package](https://github.com/pharmaverse/admiralci#links)
+**Example of use:** [admiral R package](https://github.com/insightsengineering/thevalidatoR/blob/main/readme_files/report-0.1-admiral.pdf)
 
-**Expected output:** Fail the pipeline if a link is broken in your repo.
+**Expected output:** A PDF attached to a release.
 :::
 
 ## Why should I use this?

@@ -20,9 +20,14 @@ toc: true
 
 ## Why should I use this?
 
-`pkgdown` is the most common framework for rendering R package documentation into a an HTML website. 
- Generating and uploading documentation manually makes it very easy for differences
-to be present 
+`pkgdown` is the most common framework for rendering R package documentation into a an HTML website. This `gh-action` will 
+generate the documentation, and deploy it to a gh-pages branch. It will also upload a copy of the documentation to the release. 
+
+This is important for multiple reasons:
+
+1. Because the documentation is generated automatically, you can make sure the documentation matches the code. Without CICD you are relying on users remembering to rebuild the documentation when they make changes.
+1. If you manually generate the documentation, you will need to store the built artefacts in your git repo. This will bloat your repo, and make it harder to work with.
+1. Because the documentation is versioned, you can always find the documentation that matches the version of the code you are using. This is important for reproducibility. 
 
 
 ## How do I set it up?
