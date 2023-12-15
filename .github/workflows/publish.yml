@@ -14,7 +14,7 @@ on:
 jobs:
   links:
     name: Links
-    uses: phuse-org/devops-toolkit/.github/workflows/urlchecker.yml@main
+    uses: filiph/linkcheck@3.0.0
   publish:
     name: Build & Deploy Site
     needs: links
