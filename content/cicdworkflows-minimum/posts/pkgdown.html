@@ -247,7 +247,7 @@ About the gh-action
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
-<p><strong>Example of use:</strong> <a href="https://github.com/insightsengineering/teal/blob/main/.github/workflows/docs.yaml">teal R package</a></p>
+<p><strong>Example of use:</strong> <a href="https://github.com/pharmaverse/falcon/blob/use-phuse-cicd/.github/workflows/phuse-basics.yml">falcon R package</a></p>
 <p><strong>Expected output:</strong> Generate and deploy to gh-pages versioned documentation, and upload copy of documentation to release.</p>
 </div>
 </div>
@@ -276,16 +276,13 @@ About the gh-action
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="ex">jobs:</span></span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="ex">docs:</span></span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="ex">name:</span> Pkgdown Docs 📚</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="ex">uses:</span> insightsengineering/r.pkg.template/.github/workflows/pkgdown.yaml@main</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="ex">uses:</span> phuse-org/devops-toolkit/.github/workflows/pkgdown.yml@main</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="ex">secrets:</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>      <span class="ex">REPO_GITHUB_TOKEN:</span> <span class="va">${</span><span class="er">{ secrets.REPO_GITHUB_TOKEN </span><span class="va">}</span>}</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="ex">with:</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>      <span class="ex">default-landing-page:</span> latest-tag</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>      <span class="ex">REPO_GITHUB_TOKEN:</span> <span class="va">${</span><span class="er">{ secrets.REPO_GITHUB_TOKEN </span><span class="va">}</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="the-deets" class="level2">
 <h2 class="anchored" data-anchor-id="the-deets">The deets</h2>
 <p>If you have built docs locally in the past, you are probably aware that your git repo will balloon in size, as it stores a copy of each piece version of every plot and image you have used in your documentation. This <code>gh-action</code> will help you avoid that, by placing the versioned documentation into an orphan branch. Helping to keep your docs (a built artefact) seperate from your source code.</p>
-<p>The <code>gh-action</code> is well documented in-line, <a href="https://github.com/insightsengineering/r.pkg.template/blob/main/.github/workflows/pkgdown.yaml">and stored at this location</a>.</p>
 
 
 </section>

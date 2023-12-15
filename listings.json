@@ -2,28 +2,8 @@
   {
     "listing": "/post/index.html",
     "items": [
-      "/post/posts/gh-actions.html",
-      "/post/posts/external-resources.html"
-    ]
-  },
-  {
-    "listing": "/content/cicdworkflows-recommend/index.html",
-    "items": [
-      "/content/cicdworkflows-recommend/posts/check-links/check-links.html"
-    ]
-  },
-  {
-    "listing": "/content/cicdworkflows-minimum/index.html",
-    "items": [
-      "/content/cicdworkflows-minimum/posts/r-cmd-check/r-cmd-check.html",
-      "/content/cicdworkflows-minimum/posts/pkgdown.html",
-      "/content/cicdworkflows-minimum/posts/code-coverage.html"
-    ]
-  },
-  {
-    "listing": "/content/cicdworkflows-enhanced/index.html",
-    "items": [
-      "/content/cicdworkflows-enhanced/posts/validate/validate.html"
+      "/post/posts/external-resources.html",
+      "/post/posts/gh-actions.html"
     ]
   },
   {
@@ -41,6 +21,26 @@
       "/content/cicdworkflows-minimum/posts/code-coverage.html",
       "/content/cicdworkflows-recommend/posts/check-links/check-links.html",
       "/content/cicdworkflows-enhanced/posts/validate/validate.html"
+    ]
+  },
+  {
+    "listing": "/content/cicdworkflows-minimum/index.html",
+    "items": [
+      "/content/cicdworkflows-minimum/posts/r-cmd-check/r-cmd-check.html",
+      "/content/cicdworkflows-minimum/posts/pkgdown.html",
+      "/content/cicdworkflows-minimum/posts/code-coverage.html"
+    ]
+  },
+  {
+    "listing": "/content/cicdworkflows-enhanced/index.html",
+    "items": [
+      "/content/cicdworkflows-enhanced/posts/validate/validate.html"
+    ]
+  },
+  {
+    "listing": "/content/cicdworkflows-recommend/index.html",
+    "items": [
+      "/content/cicdworkflows-recommend/posts/check-links/check-links.html"
     ]
   }
 ]
