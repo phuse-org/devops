@@ -12,12 +12,8 @@ on:
       - '**.scss'
 
 jobs:
-  links:
-    name: Links
-    uses: filiph/linkcheck@3.0.0
   publish:
     name: Build & Deploy Site
-    needs: links
     runs-on: ubuntu-latest
     container:
       image: rocker/tidyverse:latest
@@ -30,6 +26,9 @@ jobs:
       - name: Render Quarto Project
         run: quarto render --output-dir _site
         shell: bash
+
+      - name: Links
+        uses: filiph/linkcheck@3.0.0
 
       - name: Publish Site
         uses: peaceiris/actions-gh-pages@v3
