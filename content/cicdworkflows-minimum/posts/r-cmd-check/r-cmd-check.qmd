@@ -12,9 +12,7 @@ toc: true
 :::{.callout-note style="margin-top: 0rem;" collapse="false"}
 ## About the gh-action
 
-[**Link to `gh-action`**](https://github.com/pharmaverse/admiralci/blob/main/.github/workflows/r-cmd-check.yml)
-
-**Example of use:** ADD
+**Example of use:** [falcon R package](https://github.com/pharmaverse/falcon/blob/use-phuse-cicd/.github/workflows/phuse-basics.yml)
 
 **Expected output:** Fail the pipeline if `R CMD Check` fails.
 :::
@@ -34,27 +32,32 @@ Below is an example of using this `gh-action` whenever someone tries to make PR 
 
 
 ```bash
----
-name: R CMD Check
+name: Run R-CMD-check
+# sourced from phuse-org/devops-toolkit
 
 on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+      - ready_for_review
+    branches:
+      - main
   push:
     branches:
       - main
-      - devel
-  pull_request:
-    branches:
-      - main
-      - devel
+  workflow_dispatch:
 
 jobs:
-  check:
-    name: Check
-    uses: pharmaverse/admiralci/.github/workflows/r-cmd-check.yml@main
-    if: github.event_name == 'pull_request'
+  links:
+    name: Links
+    uses: phuse-org/devops-toolkit/.github/workflows/R-CMD-check.yml@main
 ```
 
 ## The deets
+
+
 
 ## Advanced use
 

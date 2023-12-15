@@ -89,7 +89,6 @@ A recomended plan for success in implenting CICD on your project is to:
 
 - [Read this post](post/posts/gh-actions.html) on the general anatomy of a `gh-action`
 - Browse our recomended `gh-action`'s below
-- Review this case study of CICD is used in `admiral`
 - Implement CICD on your git repo!
 
 We've also collected togther [this list of external learning resources](post/posts/external-resources.html).

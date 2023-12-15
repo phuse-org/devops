@@ -12,8 +12,12 @@ on:
       - '**.scss'
 
 jobs:
+  links:
+    name: Links
+    uses: phuse-org/devops-toolkit/.github/workflows/urlchecker.yml@main
   publish:
     name: Build & Deploy Site
+    needs: links
     runs-on: ubuntu-latest
     container:
       image: rocker/tidyverse:latest

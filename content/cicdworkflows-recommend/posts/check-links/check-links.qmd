@@ -13,15 +13,15 @@ toc: true
 :::{.callout-note style="margin-top: 0rem;" collapse="false"}
 ## About the gh-action
 
-**Example of use:** [admiral R package](https://github.com/pharmaverse/admiralci#links)
+**Example of use:** [falcon R package](https://github.com/pharmaverse/falcon/blob/use-phuse-cicd/.github/workflows/phuse-basics.yml)
 
-**Expected output:** Fail the pipeline if a link is broken in your repo.
+**Expected output:** Fail the pipeline if a link is broken in your repo (**CHECK IT DOES THIS**)
 :::
 
 ## Why should I use this?
 
 As a codebase grows, it becomes more likely you will end up with a number of links in your documentation. 
-These links can over time stop working - and often you won't know till a user flags your links or broken.
+These links can stop working over time - and often you won't know till a user flags your links are broken.
 
 This `gh-action` lets you stay on top of broken links, by actively scanning for them.
 
@@ -31,24 +31,27 @@ Below is an example of using this `gh-action` whenever someone tries to make PR 
 
 
 ```bash
----
-name: Docs 📚
+name: Check URLs in docs 📚
+# sourced from phuse-org/devops-toolkit
 
 on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+      - ready_for_review
+    branches:
+      - main
   push:
     branches:
       - main
-      - devel
-  pull_request:
-    branches:
-      - main
-      - devel
+  workflow_dispatch:
 
 jobs:
   links:
     name: Links
-    uses: pharmaverse/admiralci/.github/workflows/links.yml@main
-    if: github.event_name == 'pull_request'
+    uses: phuse-org/devops-toolkit/.github/workflows/urlchecker.yml@main
 ```
 
 ## The deets

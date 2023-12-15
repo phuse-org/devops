@@ -13,7 +13,7 @@ toc: true
 :::{.callout-note style="margin-top: 0rem;" collapse="false"}
 ## About the gh-action
 
-**Example of use:** [admiral R package](https://github.com/pharmaverse/admiralci#code-coverage)
+**Example of use:** [falcon R package](https://github.com/pharmaverse/falcon/blob/use-phuse-cicd/.github/workflows/phuse-basics.yml)
 
 **Expected output:** Badge (![Code
 Coverage](https://github.com/pharmaverse/admiralci/actions/workflows/code-coverage.yml/badge.svg)) or change pipeline depending on reported code coverage.
@@ -39,10 +39,29 @@ setting up tests with test that.
 You can call this action via adding a call to this job in a github action. A minimal example 
 that runs this on commits to master is:
 
-> ..... Have a 'recomended' yaml like admiral does with common? 
-Then can link to that line of code in that gh-action file?
+```bash
+name: Code coverage
+# sourced from phuse-org/devops-toolkit
 
-> ....... How do the badges work with this one? The docs seem to contradict what is present in the admiral R package.
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+      - ready_for_review
+    branches:
+      - main
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  coverage:
+    name: Code Coverage
+    uses: phuse-org/devops-toolkit/.github/workflows/test-coverage.yml@main
+```
 
 ## The deets
 

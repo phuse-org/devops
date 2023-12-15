@@ -13,7 +13,7 @@ toc: true
 :::{.callout-note style="margin-top: 0rem;" collapse="false"}
 ## About the gh-action
 
-**Example of use:** [teal R package](https://github.com/insightsengineering/teal/blob/main/.github/workflows/docs.yaml)
+**Example of use:** [falcon R package](https://github.com/pharmaverse/falcon/blob/use-phuse-cicd/.github/workflows/phuse-basics.yml)
 
 **Expected output:** Generate and deploy to gh-pages versioned documentation, and upload copy of documentation to release.
 :::
@@ -47,11 +47,9 @@ on:
 jobs:
   docs:
     name: Pkgdown Docs 📚
-    uses: insightsengineering/r.pkg.template/.github/workflows/pkgdown.yaml@main
+    uses: phuse-org/devops-toolkit/.github/workflows/pkgdown.yml@main
     secrets:
       REPO_GITHUB_TOKEN: ${{ secrets.REPO_GITHUB_TOKEN }}
-    with:
-      default-landing-page: latest-tag
 ```
 
 ## The deets
@@ -60,4 +58,3 @@ If you have built docs locally in the past, you are probably aware that your git
 of each piece version of every plot and image you have used in your documentation. This `gh-action` will help you avoid that, by 
 placing the versioned documentation into an orphan branch. Helping to keep your docs (a built artefact) seperate from your source code.
 
-The `gh-action` is well documented in-line, [and stored at this location](https://github.com/insightsengineering/r.pkg.template/blob/main/.github/workflows/pkgdown.yaml).
