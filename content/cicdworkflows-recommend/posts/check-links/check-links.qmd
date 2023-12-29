@@ -58,4 +58,4 @@ jobs:
 
 This gh-action uses lychee. If you need to prevent false positive deadlinks stopping the 
 process, you can use a `.lycheeignore` file. There is an example of this file [from 
-admiral here](https://github.com/pharmaverse/admiral/blob/devel/.lycheeignore).
+admiral here](https://github.com/pharmaverse/admiral/blob/01b819a2a2bf6aa82dafb996f328d7db7123ca93/.lycheeignore).
