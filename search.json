@@ -207,7 +207,7 @@
     "href": "content/cicdworkflows-minimum/posts/r-cmd-check/r-cmd-check.html#how-do-i-set-it-up",
     "title": "R CMD Check",
     "section": "How do I set it up?",
-    "text": "How do I set it up?\nBelow is an example of using this gh-action whenever someone tries to make PR into your main or devel branch or updates the branch. We recomend you use this on both main and devel branches, as it will help you catch issues before they get into your main branch.\nname: Run R-CMD-check\n# sourced from phuse-org/devops-toolkit\n\non:\n  pull_request:\n    types:\n      - opened\n      - synchronize\n      - reopened\n      - ready_for_review\n    branches:\n      - main\n  push:\n    branches:\n      - main\n  workflow_dispatch:\n\njobs:\n  links:\n    name: Links\n    uses: phuse-org/devops-toolkit/.github/workflows/R-CMD-check.yml@main"
+    "text": "How do I set it up?\nBelow is an example of using this gh-action whenever someone tries to make PR into your main or devel branch or updates the branch. We recomend you use this on both main and devel branches, as it will help you catch issues before they get into your main branch.\nname: Run R-CMD-check\n# sourced from phuse-org/devops-toolkit\n\non:\n  pull_request:\n    types:\n      - opened\n      - synchronize\n      - reopened\n      - ready_for_review\n    branches:\n      - main\n  push:\n    branches:\n      - main\n  workflow_dispatch:\n\njobs:\n  check:\n    name: Check\n    uses: phuse-org/devops-toolkit/.github/workflows/R-CMD-check.yml@main"
   },
   {
     "objectID": "content/cicdworkflows-minimum/posts/r-cmd-check/r-cmd-check.html#the-deets",
