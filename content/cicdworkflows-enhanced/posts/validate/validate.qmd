@@ -21,39 +21,62 @@ toc: true
 
 ## Why should I use this?
 
-As a codebase grows, it becomes more likely you will end up with a number of links in your documentation. 
-These links can over time stop working - and often you won't know till a user flags your links or broken.
+Validation is not a fixed term, and it is strongly recommended to make yourself aware of the work of the R Validation Hub (https://www.pharmar.org/), including the 
+regulatory repo project.
 
-This `gh-action` lets you stay on top of broken links, by actively scanning for them.
+When using an R package, it is important to know that what the documentation claims the package does is tested, and these tests pass on the 
+environment you will be using. This gh-action generates a generic report, that takes the documentation and links it to the 
+unit tests, and records how the the tests performed against a specific R environment. 
+
+The aim here is to who in a pan-company way to document the relationship between documentation and tests. Before 
+using internally, you would need to 1) confirm the documentation is well written, 2) the unit tests are sufficient to 
+test that documentation and 3) you are assessing against the actual environments you use internally.
 
 ## How do I set it up?
 
-Below is an example of using this `gh-action` whenever someone tries to make PR into your `main` or `devel` branch.
+Below is an example of using this `gh-action` when a release is made.
 
 
 ```bash
 ---
-name: Docs 📚
+name: R Package Validation report
 
-on:
-  push:
-    branches:
-      - main
-      - devel
-  pull_request:
-    branches:
-      - main
-      - devel
+on: # Run this action when a release is published
+  release:
+    types: [published]
 
 jobs:
-  links:
-    name: Links
-    uses: pharmaverse/admiralci/.github/workflows/links.yml@main
-    if: github.event_name == 'pull_request'
+  r-pkg-validation:
+    name: Create report 📃
+    runs-on: ubuntu-latest
+    container:
+      image: rocker/verse:4.1.1
+    # Set Github token permissions
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+    permissions:
+      contents: write
+      packages: write
+      deployments: write
+    steps:
+      - name: Checkout repo 🛎
+        uses: actions/checkout@v3
+
+      - name: Build report 🏗
+        id: validation
+        uses: insightsengineering/thevalidatoR@main
+        # see parameters above for custom templates and other formats
+
+      # Upload the validation report to the release
+      - name: Upload report to release 🔼
+        if: success()
+        uses: svenstaro/upload-release-action@v2
+        with:
+          file: ${{ steps.validation.outputs.report_output_filename }}
+          asset_name: ${{ steps.validation.outputs.report_output_filename }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          tag: ${{ github.ref }}
+          overwrite: false
 ```
 
-## The deets
 
-This gh-action uses lychee. If you need to prevent false positive deadlinks stopping the 
-process, you can use a `.lycheeignore` file. There is an example of this file [from 
-admiral here](https://github.com/pharmaverse/admiral/blob/devel/.lycheeignore).
