@@ -25,7 +25,7 @@
     "href": "content/cicdworkflows-recommend/posts/check-links/check-links.html#the-deets",
     "title": "Check links",
     "section": "The deets",
-    "text": "The deets\nThis gh-action uses lychee. If you need to prevent false positive deadlinks stopping the process, you can use a .lycheeignore file. There is an example of this file from admiral here."
+    "text": "The deets\nThis gh-action is using https://urlchecker.r-lib.org/, so is specific to R packages."
   },
   {
     "objectID": "content/cicdworkflows-enhanced/posts/validate/validate.html",
