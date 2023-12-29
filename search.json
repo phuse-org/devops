@@ -39,21 +39,14 @@
     "href": "content/cicdworkflows-enhanced/posts/validate/validate.html#why-should-i-use-this",
     "title": "theValidator",
     "section": "Why should I use this?",
-    "text": "Why should I use this?\nAs a codebase grows, it becomes more likely you will end up with a number of links in your documentation. These links can over time stop working - and often you won’t know till a user flags your links or broken.\nThis gh-action lets you stay on top of broken links, by actively scanning for them."
+    "text": "Why should I use this?\nValidation is not a fixed term, and it is strongly recommended to make yourself aware of the work of the R Validation Hub (https://www.pharmar.org/), including the regulatory repo project.\nWhen using an R package, it is important to know that what the documentation claims the package does is tested, and these tests pass on the environment you will be using. This gh-action generates a generic report, that takes the documentation and links it to the unit tests, and records how the the tests performed against a specific R environment.\nThe aim here is to who in a pan-company way to document the relationship between documentation and tests. Before using internally, you would need to 1) confirm the documentation is well written, 2) the unit tests are sufficient to test that documentation and 3) you are assessing against the actual environments you use internally."
   },
   {
     "objectID": "content/cicdworkflows-enhanced/posts/validate/validate.html#how-do-i-set-it-up",
     "href": "content/cicdworkflows-enhanced/posts/validate/validate.html#how-do-i-set-it-up",
     "title": "theValidator",
     "section": "How do I set it up?",
-    "text": "How do I set it up?\nBelow is an example of using this gh-action whenever someone tries to make PR into your main or devel branch.\n---\nname: Docs 📚\n\non:\n  push:\n    branches:\n      - main\n      - devel\n  pull_request:\n    branches:\n      - main\n      - devel\n\njobs:\n  links:\n    name: Links\n    uses: pharmaverse/admiralci/.github/workflows/links.yml@main\n    if: github.event_name == 'pull_request'"
-  },
-  {
-    "objectID": "content/cicdworkflows-enhanced/posts/validate/validate.html#the-deets",
-    "href": "content/cicdworkflows-enhanced/posts/validate/validate.html#the-deets",
-    "title": "theValidator",
-    "section": "The deets",
-    "text": "The deets\nThis gh-action uses lychee. If you need to prevent false positive deadlinks stopping the process, you can use a .lycheeignore file. There is an example of this file from admiral here."
+    "text": "How do I set it up?\nBelow is an example of using this gh-action when a release is made.\n---\nname: R Package Validation report\n\non: # Run this action when a release is published\n  release:\n    types: [published]\n\njobs:\n  r-pkg-validation:\n    name: Create report 📃\n    runs-on: ubuntu-latest\n    container:\n      image: rocker/verse:4.1.1\n    # Set Github token permissions\n    env:\n      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}\n    permissions:\n      contents: write\n      packages: write\n      deployments: write\n    steps:\n      - name: Checkout repo 🛎\n        uses: actions/checkout@v3\n\n      - name: Build report 🏗\n        id: validation\n        uses: insightsengineering/thevalidatoR@main\n        # see parameters above for custom templates and other formats\n\n      # Upload the validation report to the release\n      - name: Upload report to release 🔼\n        if: success()\n        uses: svenstaro/upload-release-action@v2\n        with:\n          file: ${{ steps.validation.outputs.report_output_filename }}\n          asset_name: ${{ steps.validation.outputs.report_output_filename }}\n          repo_token: ${{ secrets.GITHUB_TOKEN }}\n          tag: ${{ github.ref }}\n          overwrite: false"
   },
   {
     "objectID": "content/cicdworkflows-minimum/posts/code-coverage.html",
