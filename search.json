@@ -116,7 +116,7 @@
     "href": "content/cicdworkflows-minimum/posts/pkgdown.html#how-do-i-set-it-up",
     "title": "Generate pkgdown documentation",
     "section": "How do I set it up?",
-    "text": "How do I set it up?\nYou can call this action via adding a call to this job in a github action. A minimal example that runs this on commits to main is:\n---\nname: Docs 📚\n\non:\n  push:\n    branches:\n      - main\n\njobs:\n  docs:\n    name: Pkgdown Docs 📚\n    uses: phuse-org/devops-toolkit/.github/workflows/pkgdown.yml@main\n    secrets:\n      REPO_GITHUB_TOKEN: ${{ secrets.REPO_GITHUB_TOKEN }}"
+    "text": "How do I set it up?\nYou can call this action via adding a call to this job in a github action. A minimal example that runs this on commits to main is:\n---\nname: Docs 📚\n\non:\n  push:\n    branches:\n      - main\n\njobs:\n  docs:\n    name: Pkgdown Docs 📚\n    uses: phuse-org/devops-toolkit/.github/workflows/pkgdown.yml@main"
   },
   {
     "objectID": "content/cicdworkflows-minimum/posts/pkgdown.html#the-deets",
