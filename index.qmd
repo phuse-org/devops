@@ -54,12 +54,14 @@ toc: false
 ::: grid
 ::: {.g-col-12 .g-col-lg-8 .top-story-text}
 ## Welcome to the home of **PharmaDevOps**
-This PHUSE working group is focussed on ensuring package authors (with an initial focus on R)
-can easily add CICD to pharmaverse R packages (the next-generation of clinical reporting tools) 
+This PHUSE working group is initially focussed on ensuring R package authors 
+can easily add CICD to pharmaverse R packages 
 and related biostastical packages.
 
-Our aim is not to re-invent the wheel, but instead provide context and fill in the gaps within
-the domain of devops, by data scientists, in late-stage drug development.
+Our aim is not to re-invent the wheel. We hope to both 
+convince package developers of the value of CICD, 
+provide a minimum bar of what is expected, and provide a 
+set of tools to make it easy to implement.
 :::
 ::: {.g-col-12 .g-col-lg-4 .top-story-img}
 ![](assets/PharmaDevOps.png){width=70% fig-align="center"}
@@ -79,7 +81,7 @@ the domain of devops, by data scientists, in late-stage drug development.
 
 In this guidance, you'll see a number of `gh-actions` that you can use to implement CICD on your project. We have categorised these into three groups:
 
-- *Minimum CICD*: These are the minimum CICD tools we recommend for all packages on the pharmaverse. These CICD tools are focussed on ensuring your package works, and documentation matches the code.
+- *Minimum CICD*: These are the minimum CICD tools we recommend for all packages, including those in the `pharmaverse` and `openstatsware`. These CICD tools are focussed on ensuring your package works, and documentation matches the code.
 - *Recommended CICD*: These are tools we feel make your life developing and releasing robust code easier.
 - *Enhanced CICD*: These are tools are option tools for power users, or those with specific needs.
 
