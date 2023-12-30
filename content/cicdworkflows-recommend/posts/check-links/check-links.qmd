@@ -56,6 +56,4 @@ jobs:
 
 ## The deets
 
-This gh-action uses lychee. If you need to prevent false positive deadlinks stopping the 
-process, you can use a `.lycheeignore` file. There is an example of this file [from 
-admiral here](https://github.com/pharmaverse/admiral/blob/devel/.lycheeignore).
+This `gh-action` is using https://urlchecker.r-lib.org/, so is specific to R packages.

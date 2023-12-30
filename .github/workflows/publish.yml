@@ -12,12 +12,8 @@ on:
       - '**.scss'
 
 jobs:
-  links:
-    name: Links
-    uses: filiph/linkcheck@3.0.0
   publish:
     name: Build & Deploy Site
-    needs: links
     runs-on: ubuntu-latest
     container:
       image: rocker/tidyverse:latest
@@ -37,3 +33,21 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./_site
           keep_files: true
+
+  broken_link_checker_job:
+    runs-on: ubuntu-latest
+    needs: publish
+    name: Check for broken links
+    steps:
+      - name: Check for broken links
+        id: link-report
+        uses: celinekurpershoek/link-checker@v1.0.2
+        with:
+          # Required:
+          url: "https://phuse-org.github.io/devops/"
+          # optional:
+          honorRobotExclusions: false
+          ignorePatterns: "github,google"
+          recursiveLinks: false # Check all URLs on all reachable pages (could take a while)
+      - name: Get the result
+        run: echo "${{steps.link-report.outputs.result}}"
