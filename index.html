@@ -228,7 +228,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="grid">
 <section id="welcome-to-the-home-of-pharmadevops" class="g-col-12 g-col-lg-8 top-story-text">
 <h2>Welcome to the home of <strong>PharmaDevOps</strong></h2>
-<p>This PHUSE working group is initially focussed on ensuring R package authors can easily add CICD to pharmaverse R packages and related biostastical packages.</p>
+<p>This PHUSE working group is initially focussed on ensuring R package authors can easily add CICD to pharmaverse R packages and related biostatistical packages.</p>
 <p>Our aim is not to re-invent the wheel. We hope to both convince package developers of the value of CICD, provide a minimum bar of what is expected, and provide a set of tools to make it easy to implement.</p>
 </section>
 <div class="g-col-12 g-col-lg-4 top-story-img">
@@ -249,7 +249,7 @@ ul.task-list li input[type="checkbox"] {
 <h2>Getting started with CICD</h2>
 <p>In this guidance, you’ll see a number of <code>gh-actions</code> that you can use to implement CICD on your project. We have categorised these into three groups:</p>
 <ul>
-<li><em>Minimum CICD</em>: These are the minimum CICD tools we recommend for all packages, including those in the <code>pharmaverse</code> and <code>openstatsware</code>. These CICD tools are focussed on ensuring your package works, and documentation matches the code.</li>
+<li><em>Minimum CICD</em>: These are the minimum CICD tools we recommend for all packages, including those in the <code>pharmaverse</code> and <code>openstatsware</code>. These CICD tools are focussed on ensuring your package works, and the documentation users see matches the latest release of your code.</li>
 <li><em>Recommended CICD</em>: These are tools we feel make your life developing and releasing robust code easier.</li>
 <li><em>Enhanced CICD</em>: These are tools are option tools for power users, or those with specific needs.</li>
 </ul>
@@ -261,14 +261,6 @@ ul.task-list li input[type="checkbox"] {
 <li>Implement CICD on your git repo!</li>
 </ul>
 <p>We’ve also collected togther <a href="post/posts/external-resources.html">this list of external learning resources</a>.</p>
-<!--# Notes on getting started 
-Provide a master version (e.g. here's a single file with all the recomended) [TODO]
-How the triggers work is confusing, and changing CICD based on what's happening (PR to specific branch) - deeper dive on how to automate checks in workflow, e.g. catch bugs before main [TODO]
-Ensure we put upfront what the benefit is for each recomended (e.g. coverage gives you a badge, version bumping updates your description file, keeping built artifacts like docs out of the main code, etc) [TODO]
-Flag important parameters with notes in the gh-action code so users can understand what's going on [TODO]
-Enabling advanced workflows - e.g. test against current prod branch of the pharmaverse r-universe [TODO]
-Should we have badge if they meet minimum cicd? [TODO]
--->
 </section>
 </div>
 </div>
@@ -279,10 +271,11 @@ Should we have badge if they meet minimum cicd? [TODO]
 <p><a href="./content/cicdworkflows-minimum/index.html"></a></p><a href="./content/cicdworkflows-minimum/index.html">
 <h2 id="minimum-cicd">Minimum CICD</h2>
 <p>The following CICD is what we consider a minimum bar for a package on the pharmaverse. These CICD tools are focussed on ensuring your package works, and documentation matches the code.</p>
+<p>There is no need to use the specific code we suggest, if you are happy getting the same functionality from another source, like the ones built into <code>usethis</code>.</p>
 </a><p><a href="./content/cicdworkflows-minimum/index.html"></a></p>
 <div id="listing-cicdworkflows-minimum" class="quarto-listing quarto-listing-container-grid">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Testing" data-listing-date-sort="1692748800000" data-listing-file-modified-sort="1708012081038" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="g-col-1" data-index="0" data-categories="Testing" data-listing-date-sort="1692748800000" data-listing-file-modified-sort="1708013180541" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
 <a href="./content/cicdworkflows-minimum/posts/r-cmd-check/r-cmd-check.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -312,7 +305,7 @@ Aug 23, 2023
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="Documentation,R" data-listing-date-sort="1690848000000" data-listing-file-modified-sort="1708012081038" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="g-col-1" data-index="1" data-categories="Documentation,R" data-listing-date-sort="1690848000000" data-listing-file-modified-sort="1708013180541" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
 <a href="./content/cicdworkflows-minimum/posts/pkgdown.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -345,7 +338,7 @@ Aug 1, 2023
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="Documentation,Links" data-listing-date-sort="1690848000000" data-listing-file-modified-sort="1708012081038" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4">
+<div class="g-col-1" data-index="2" data-categories="Documentation,Links" data-listing-date-sort="1690848000000" data-listing-file-modified-sort="1708013180541" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4">
 <a href="./content/cicdworkflows-minimum/posts/code-coverage.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -393,7 +386,7 @@ No matching items
 </a><p><a href="./content/cicdworkflows-recommend/index.html"></a></p>
 <div id="listing-cicdworkflows-recommend" class="quarto-listing quarto-listing-container-grid">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Documentation,Links" data-listing-date-sort="1690848000000" data-listing-file-modified-sort="1708012081042" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="g-col-1" data-index="0" data-categories="Documentation,Links" data-listing-date-sort="1690848000000" data-listing-file-modified-sort="1708013180541" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
 <a href="./content/cicdworkflows-recommend/posts/check-links/check-links.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -437,11 +430,11 @@ No matching items
 <div class="listing-block">
 <p><a href="./content/cicdworkflows-enhanced/index.html"></a></p><a href="./content/cicdworkflows-enhanced/index.html">
 <h2 id="enhanced-cicd">Enhanced CICD</h2>
-<p>The following CICD are tools are option tools for power users.</p>
+<p>The following CICD are tools are optional tools for power users.</p>
 </a><p><a href="./content/cicdworkflows-enhanced/index.html"></a></p>
 <div id="listing-cicdworkflows-enhanced" class="quarto-listing quarto-listing-container-grid">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Testing,Documentation,Validation" data-listing-date-sort="1690848000000" data-listing-file-modified-sort="1708012081038" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
+<div class="g-col-1" data-index="0" data-categories="Testing,Documentation,Validation" data-listing-date-sort="1690848000000" data-listing-file-modified-sort="1708013180541" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
 <a href="./content/cicdworkflows-enhanced/posts/validate/validate.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
