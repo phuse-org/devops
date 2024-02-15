@@ -1,5 +1,96 @@
 [
   {
+    "objectID": "meetings/minutes/2023-06-23.html",
+    "href": "meetings/minutes/2023-06-23.html",
+    "title": "Meeting 1",
+    "section": "",
+    "text": "Meeting notes:\nNeeded to kick off next meeting\n\nWhat format to use? (e.g. quarto template for site) Dinakar\nJames to pass on linkedin stuff to PHUSE - push out kick off (August)\nCopy in admiral as starting point for template into this repo - Dinakar\nCurate list of links (other cicd tools relevant, trainings) - James\nPHUSE abstract (end of July) - Ben\nplaceholder discussion for git flows - James\nwhat could the purpose of the hackathon? open discussion. Is a workshop better like the R/pharma? - James\nmake doodle for in 2 weeks - james\n\nAim in next meeting (pre-kickoff):\n\nReview/write abstract for PhUSE US Connect\nWork on website content\n\n\nInternal servers? Gitlab self-hosted, and github enterprise, github SaaS"
+  },
+  {
+    "objectID": "meetings/index.html",
+    "href": "meetings/index.html",
+    "title": "Meetings",
+    "section": "",
+    "text": "Meeting notes and minutes.\n\n\n\n\n\n\n\n\n  \n\n\n\n\nMeeting 2\n\n\nMeeting notes\n\n\n\n\n\n\n\n\n\nAug 11, 2023\n\n\n\n\n\n\n  \n\n\n\n\nMeeting 1\n\n\nMeeting notes from the first meeting\n\n\n\n\n\n\n\n\n\nJun 23, 2023\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "post/posts/gh-actions.html",
+    "href": "post/posts/gh-actions.html",
+    "title": "The anatomy of a gh-action",
+    "section": "",
+    "text": "GitHub Actions are a powerful automation and CI/CD (Continuous Integration/Continuous Deployment) platform provided by GitHub. It allows you to automate various tasks and workflows in response to events that occur in your GitHub repositories. Actions are defined using YAML files that specify the workflow to be executed. The workflow file typically has a .yml extension. Below is an explanation of the key syntax elements in a GitHub Actions workflow file as an annotated example:\n# Name: You can specify a name for your workflow. \n# This is a human-readable description of the workflow \n# and is not required for the workflow to function.\nname: My CI/CD Workflow\n\n# on: This specifies the events that trigger the workflow. \n# You can set it to various events like pushes to a \n# repository, pull requests, or even a schedule.\non:\n  push:\n    branches:\n      - master\n  pull_request:\n    branches:\n      - master\n\n# jobs: This is the main section of the workflow file. \n# It defines the jobs that are to be executed when \n# the workflow is triggered.\njobs:\n  build:\n    runs-on: ubuntu-latest # Specifies the type of virtual \n    # machine or runner on which the job will run. GitHub \n    # provides various runners for different platforms, \n    # including Windows, Linux, and macOS.\n    steps: # Contains a list of steps that are executed \n    # in the specified order. Steps are individual \n    # tasks within a job.\n      - name: Checkout code\n        uses: actions/checkout@v2"
+  },
+  {
+    "objectID": "contact.html",
+    "href": "contact.html",
+    "title": "Contact Us",
+    "section": "",
+    "text": "GitHub: @phuse-org/devops\nTwitter: @PHUSETwitta"
+  },
+  {
+    "objectID": "content/cicdworkflows-minimum/posts/r-cmd-check/r-cmd-check.html",
+    "href": "content/cicdworkflows-minimum/posts/r-cmd-check/r-cmd-check.html",
+    "title": "R CMD Check",
+    "section": "",
+    "text": "About the gh-action\n\n\n\n\n\nExample of use: falcon R package\nExpected output: Fail the pipeline if R CMD Check fails."
+  },
+  {
+    "objectID": "content/cicdworkflows-minimum/posts/r-cmd-check/r-cmd-check.html#why-should-i-use-this",
+    "href": "content/cicdworkflows-minimum/posts/r-cmd-check/r-cmd-check.html#why-should-i-use-this",
+    "title": "R CMD Check",
+    "section": "Why should I use this?",
+    "text": "Why should I use this?\nR CMD Check has around 50 checks, but the general jist is it will check your package is fit to install, and as part of that process run the unit tests. In many companies, you will be running potentially multiple versions of R in parrallel. To reflect that, this gh-action is updated to run across the last 3 R major versions, using a snapshot from the Posit Public Package Manager that reflects a relevant time frame for when that R version was latest.\nIf you have dependencies on other pharmaverse packages, it’s likely you will also want to run R CMD Check using CRAN today + the bleading edge of the pharmaverse (which may be pre-CRAN) via pointing at their r-universe. If this is the case, please see the advanced usage below."
+  },
+  {
+    "objectID": "content/cicdworkflows-minimum/posts/r-cmd-check/r-cmd-check.html#how-do-i-set-it-up",
+    "href": "content/cicdworkflows-minimum/posts/r-cmd-check/r-cmd-check.html#how-do-i-set-it-up",
+    "title": "R CMD Check",
+    "section": "How do I set it up?",
+    "text": "How do I set it up?\nBelow is an example of using this gh-action whenever someone tries to make PR into your main or devel branch or updates the branch. We recomend you use this on both main and devel branches, as it will help you catch issues before they get into your main branch.\nname: Run R-CMD-check\n# sourced from phuse-org/devops-toolkit\n\non:\n  pull_request:\n    types:\n      - opened\n      - synchronize\n      - reopened\n      - ready_for_review\n    branches:\n      - main\n  push:\n    branches:\n      - main\n  workflow_dispatch:\n\njobs:\n  check:\n    name: Check\n    uses: phuse-org/devops-toolkit/.github/workflows/R-CMD-check.yml@main"
+  },
+  {
+    "objectID": "content/cicdworkflows-minimum/posts/r-cmd-check/r-cmd-check.html#the-deets",
+    "href": "content/cicdworkflows-minimum/posts/r-cmd-check/r-cmd-check.html#the-deets",
+    "title": "R CMD Check",
+    "section": "The deets",
+    "text": "The deets"
+  },
+  {
+    "objectID": "content/cicdworkflows-minimum/posts/r-cmd-check/r-cmd-check.html#advanced-use",
+    "href": "content/cicdworkflows-minimum/posts/r-cmd-check/r-cmd-check.html#advanced-use",
+    "title": "R CMD Check",
+    "section": "Advanced use",
+    "text": "Advanced use\nTODO: Add here how to also run against pharmaverse’s r-universe latest & the latest release of PPM packages."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Dinakar Kulkanari\nDinakar is the lead of the IDR team at Roche/Genentech in Data & Statistical Sciences, and the general architect of Roche’s strategy for improving businesss developer efficiency, and ensuring we have robust release processes. He’s the data scientist’s go-to person for all things devops.\n\n\n\n\n\n\n\n\n\nBen Straub\nBen Straub is a Principal Programmer at GlaxoSmithKline. You can’t spend much time in the pharmaverse without getting to know Ben and his passion for collaboration. Ben was an instrumental anchor in tying CICD to value in admiral, and is now lending his expertise to guide PharmaDevOps.\n\n\n\n\n\n\n\n\n\nJames Black\nJames Black is a Senior Director, Insights Engineering, at Roche/Genentech in Data & Statistical Sciences. Via sponsoring the Insights Codebase, and being forced to learn daily as the PO/BO of the Clinical and RWE/PHC Scientific Computing Environments respectively, he has a niave passion for tools that make our data scientists more efficient at writing great packages."
+  },
+  {
+    "objectID": "content/cicdworkflows-enhanced/posts/validate/validate.html",
+    "href": "content/cicdworkflows-enhanced/posts/validate/validate.html",
+    "title": "theValidator",
+    "section": "",
+    "text": "About the gh-action\n\n\n\n\n\nExample of use: admiral R package\nExpected output: A PDF attached to a release."
+  },
+  {
+    "objectID": "content/cicdworkflows-enhanced/posts/validate/validate.html#why-should-i-use-this",
+    "href": "content/cicdworkflows-enhanced/posts/validate/validate.html#why-should-i-use-this",
+    "title": "theValidator",
+    "section": "Why should I use this?",
+    "text": "Why should I use this?\nValidation is not a fixed term, and it is strongly recommended to make yourself aware of the work of the R Validation Hub (https://www.pharmar.org/), including the regulatory repo project.\nWhen using an R package, it is important to know that what the documentation claims the package does is tested, and these tests pass on the environment you will be using. This gh-action generates a generic report, that takes the documentation and links it to the unit tests, and records how the the tests performed against a specific R environment.\nThe aim here is to who in a pan-company way to document the relationship between documentation and tests. Before using internally, you would need to 1) confirm the documentation is well written, 2) the unit tests are sufficient to test that documentation and 3) you are assessing against the actual environments you use internally."
+  },
+  {
+    "objectID": "content/cicdworkflows-enhanced/posts/validate/validate.html#how-do-i-set-it-up",
+    "href": "content/cicdworkflows-enhanced/posts/validate/validate.html#how-do-i-set-it-up",
+    "title": "theValidator",
+    "section": "How do I set it up?",
+    "text": "How do I set it up?\nBelow is an example of using this gh-action when a release is made.\n---\nname: R Package Validation report\n\non: # Run this action when a release is published\n  release:\n    types: [published]\n\njobs:\n  r-pkg-validation:\n    name: Create report 📃\n    runs-on: ubuntu-latest\n    container:\n      image: rocker/verse:4.1.1\n    # Set Github token permissions\n    env:\n      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}\n    permissions:\n      contents: write\n      packages: write\n      deployments: write\n    steps:\n      - name: Checkout repo 🛎\n        uses: actions/checkout@v3\n\n      - name: Build report 🏗\n        id: validation\n        uses: insightsengineering/thevalidatoR@main\n        # see parameters above for custom templates and other formats\n\n      # Upload the validation report to the release\n      - name: Upload report to release 🔼\n        if: success()\n        uses: svenstaro/upload-release-action@v2\n        with:\n          file: ${{ steps.validation.outputs.report_output_filename }}\n          asset_name: ${{ steps.validation.outputs.report_output_filename }}\n          repo_token: ${{ secrets.GITHUB_TOKEN }}\n          tag: ${{ github.ref }}\n          overwrite: false"
+  },
+  {
     "objectID": "content/cicdworkflows-recommend/posts/check-links/check-links.html",
     "href": "content/cicdworkflows-recommend/posts/check-links/check-links.html",
     "title": "Check links",
@@ -28,25 +119,32 @@
     "text": "The deets\nThis gh-action is using https://urlchecker.r-lib.org/, so is specific to R packages."
   },
   {
-    "objectID": "content/cicdworkflows-enhanced/posts/validate/validate.html",
-    "href": "content/cicdworkflows-enhanced/posts/validate/validate.html",
-    "title": "theValidator",
+    "objectID": "content/cicdworkflows-minimum/posts/pkgdown.html",
+    "href": "content/cicdworkflows-minimum/posts/pkgdown.html",
+    "title": "Generate pkgdown documentation",
     "section": "",
-    "text": "About the gh-action\n\n\n\n\n\nExample of use: admiral R package\nExpected output: A PDF attached to a release."
+    "text": "About the gh-action\n\n\n\n\n\nExample of use: falcon R package\nExpected output: Generate and deploy to gh-pages versioned documentation, and upload copy of documentation to release."
   },
   {
-    "objectID": "content/cicdworkflows-enhanced/posts/validate/validate.html#why-should-i-use-this",
-    "href": "content/cicdworkflows-enhanced/posts/validate/validate.html#why-should-i-use-this",
-    "title": "theValidator",
+    "objectID": "content/cicdworkflows-minimum/posts/pkgdown.html#why-should-i-use-this",
+    "href": "content/cicdworkflows-minimum/posts/pkgdown.html#why-should-i-use-this",
+    "title": "Generate pkgdown documentation",
     "section": "Why should I use this?",
-    "text": "Why should I use this?\nValidation is not a fixed term, and it is strongly recommended to make yourself aware of the work of the R Validation Hub (https://www.pharmar.org/), including the regulatory repo project.\nWhen using an R package, it is important to know that what the documentation claims the package does is tested, and these tests pass on the environment you will be using. This gh-action generates a generic report, that takes the documentation and links it to the unit tests, and records how the the tests performed against a specific R environment.\nThe aim here is to who in a pan-company way to document the relationship between documentation and tests. Before using internally, you would need to 1) confirm the documentation is well written, 2) the unit tests are sufficient to test that documentation and 3) you are assessing against the actual environments you use internally."
+    "text": "Why should I use this?\npkgdown is the most common framework for rendering R package documentation into a an HTML website. This gh-action will generate the documentation, and deploy it to a gh-pages branch. It will also upload a copy of the documentation to the release.\nThis is important for multiple reasons:\n\nBecause the documentation is generated automatically, you can make sure the documentation matches the code. Without CICD you are relying on users remembering to rebuild the documentation when they make changes.\nIf you manually generate the documentation, you will need to store the built artefacts in your git repo. This will bloat your repo, and make it harder to work with.\nBecause the documentation is versioned, you can always find the documentation that matches the version of the code you are using. This is important for reproducibility."
   },
   {
-    "objectID": "content/cicdworkflows-enhanced/posts/validate/validate.html#how-do-i-set-it-up",
-    "href": "content/cicdworkflows-enhanced/posts/validate/validate.html#how-do-i-set-it-up",
-    "title": "theValidator",
+    "objectID": "content/cicdworkflows-minimum/posts/pkgdown.html#how-do-i-set-it-up",
+    "href": "content/cicdworkflows-minimum/posts/pkgdown.html#how-do-i-set-it-up",
+    "title": "Generate pkgdown documentation",
     "section": "How do I set it up?",
-    "text": "How do I set it up?\nBelow is an example of using this gh-action when a release is made.\n---\nname: R Package Validation report\n\non: # Run this action when a release is published\n  release:\n    types: [published]\n\njobs:\n  r-pkg-validation:\n    name: Create report 📃\n    runs-on: ubuntu-latest\n    container:\n      image: rocker/verse:4.1.1\n    # Set Github token permissions\n    env:\n      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}\n    permissions:\n      contents: write\n      packages: write\n      deployments: write\n    steps:\n      - name: Checkout repo 🛎\n        uses: actions/checkout@v3\n\n      - name: Build report 🏗\n        id: validation\n        uses: insightsengineering/thevalidatoR@main\n        # see parameters above for custom templates and other formats\n\n      # Upload the validation report to the release\n      - name: Upload report to release 🔼\n        if: success()\n        uses: svenstaro/upload-release-action@v2\n        with:\n          file: ${{ steps.validation.outputs.report_output_filename }}\n          asset_name: ${{ steps.validation.outputs.report_output_filename }}\n          repo_token: ${{ secrets.GITHUB_TOKEN }}\n          tag: ${{ github.ref }}\n          overwrite: false"
+    "text": "How do I set it up?\nYou can call this action via adding a call to this job in a github action. A minimal example that runs this on commits to main is:\n---\nname: Docs 📚\n\non:\n  push:\n    branches:\n      - main\n\njobs:\n  docs:\n    name: Pkgdown Docs 📚\n    uses: phuse-org/devops-toolkit/.github/workflows/pkgdown.yml@main"
+  },
+  {
+    "objectID": "content/cicdworkflows-minimum/posts/pkgdown.html#the-deets",
+    "href": "content/cicdworkflows-minimum/posts/pkgdown.html#the-deets",
+    "title": "Generate pkgdown documentation",
+    "section": "The deets",
+    "text": "The deets\nIf you have built docs locally in the past, you are probably aware that your git repo will balloon in size, as it stores a copy of each piece version of every plot and image you have used in your documentation. This gh-action will help you avoid that, by placing the versioned documentation into an orphan branch. Helping to keep your docs (a built artefact) seperate from your source code."
   },
   {
     "objectID": "content/cicdworkflows-minimum/posts/code-coverage.html",
@@ -98,81 +196,11 @@
     "text": "The deets\nThis gh-action uses lychee. If there are false positives, you can create a .lycheeignore file. There is an example here of how this is done in admiral."
   },
   {
-    "objectID": "content/cicdworkflows-minimum/posts/pkgdown.html",
-    "href": "content/cicdworkflows-minimum/posts/pkgdown.html",
-    "title": "Generate pkgdown documentation",
-    "section": "",
-    "text": "About the gh-action\n\n\n\n\n\nExample of use: falcon R package\nExpected output: Generate and deploy to gh-pages versioned documentation, and upload copy of documentation to release."
-  },
-  {
-    "objectID": "content/cicdworkflows-minimum/posts/pkgdown.html#why-should-i-use-this",
-    "href": "content/cicdworkflows-minimum/posts/pkgdown.html#why-should-i-use-this",
-    "title": "Generate pkgdown documentation",
-    "section": "Why should I use this?",
-    "text": "Why should I use this?\npkgdown is the most common framework for rendering R package documentation into a an HTML website. This gh-action will generate the documentation, and deploy it to a gh-pages branch. It will also upload a copy of the documentation to the release.\nThis is important for multiple reasons:\n\nBecause the documentation is generated automatically, you can make sure the documentation matches the code. Without CICD you are relying on users remembering to rebuild the documentation when they make changes.\nIf you manually generate the documentation, you will need to store the built artefacts in your git repo. This will bloat your repo, and make it harder to work with.\nBecause the documentation is versioned, you can always find the documentation that matches the version of the code you are using. This is important for reproducibility."
-  },
-  {
-    "objectID": "content/cicdworkflows-minimum/posts/pkgdown.html#how-do-i-set-it-up",
-    "href": "content/cicdworkflows-minimum/posts/pkgdown.html#how-do-i-set-it-up",
-    "title": "Generate pkgdown documentation",
-    "section": "How do I set it up?",
-    "text": "How do I set it up?\nYou can call this action via adding a call to this job in a github action. A minimal example that runs this on commits to main is:\n---\nname: Docs 📚\n\non:\n  push:\n    branches:\n      - main\n\njobs:\n  docs:\n    name: Pkgdown Docs 📚\n    uses: phuse-org/devops-toolkit/.github/workflows/pkgdown.yml@main"
-  },
-  {
-    "objectID": "content/cicdworkflows-minimum/posts/pkgdown.html#the-deets",
-    "href": "content/cicdworkflows-minimum/posts/pkgdown.html#the-deets",
-    "title": "Generate pkgdown documentation",
-    "section": "The deets",
-    "text": "The deets\nIf you have built docs locally in the past, you are probably aware that your git repo will balloon in size, as it stores a copy of each piece version of every plot and image you have used in your documentation. This gh-action will help you avoid that, by placing the versioned documentation into an orphan branch. Helping to keep your docs (a built artefact) seperate from your source code."
-  },
-  {
-    "objectID": "contact.html",
-    "href": "contact.html",
-    "title": "Contact Us",
-    "section": "",
-    "text": "GitHub: @phuse-org/devops\nTwitter: @PHUSETwitta"
-  },
-  {
-    "objectID": "post/posts/gh-actions.html",
-    "href": "post/posts/gh-actions.html",
-    "title": "The anatomy of a gh-action",
-    "section": "",
-    "text": "GitHub Actions are a powerful automation and CI/CD (Continuous Integration/Continuous Deployment) platform provided by GitHub. It allows you to automate various tasks and workflows in response to events that occur in your GitHub repositories. Actions are defined using YAML files that specify the workflow to be executed. The workflow file typically has a .yml extension. Below is an explanation of the key syntax elements in a GitHub Actions workflow file as an annotated example:\n# Name: You can specify a name for your workflow. \n# This is a human-readable description of the workflow \n# and is not required for the workflow to function.\nname: My CI/CD Workflow\n\n# on: This specifies the events that trigger the workflow. \n# You can set it to various events like pushes to a \n# repository, pull requests, or even a schedule.\non:\n  push:\n    branches:\n      - master\n  pull_request:\n    branches:\n      - master\n\n# jobs: This is the main section of the workflow file. \n# It defines the jobs that are to be executed when \n# the workflow is triggered.\njobs:\n  build:\n    runs-on: ubuntu-latest # Specifies the type of virtual \n    # machine or runner on which the job will run. GitHub \n    # provides various runners for different platforms, \n    # including Windows, Linux, and macOS.\n    steps: # Contains a list of steps that are executed \n    # in the specified order. Steps are individual \n    # tasks within a job.\n      - name: Checkout code\n        uses: actions/checkout@v2"
-  },
-  {
     "objectID": "post/index.html",
     "href": "post/index.html",
     "title": "Posts",
     "section": "",
-    "text": "External references\n\n\nA list of useful external references\n\n\n\n\n\n\n\n\n\nOct 23, 2023\n\n\n\n\n\n\n  \n\n\n\n\nThe anatomy of a gh-action\n\n\nUnderstanding what makes a github action tick\n\n\n\n\n\n\n\n\n\nOct 23, 2023\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "meetings/minutes/2023-06-23.html",
-    "href": "meetings/minutes/2023-06-23.html",
-    "title": "Meeting 1",
-    "section": "",
-    "text": "Meeting notes:\nNeeded to kick off next meeting\n\nWhat format to use? (e.g. quarto template for site) Dinakar\nJames to pass on linkedin stuff to PHUSE - push out kick off (August)\nCopy in admiral as starting point for template into this repo - Dinakar\nCurate list of links (other cicd tools relevant, trainings) - James\nPHUSE abstract (end of July) - Ben\nplaceholder discussion for git flows - James\nwhat could the purpose of the hackathon? open discussion. Is a workshop better like the R/pharma? - James\nmake doodle for in 2 weeks - james\n\nAim in next meeting (pre-kickoff):\n\nReview/write abstract for PhUSE US Connect\nWork on website content\n\n\nInternal servers? Gitlab self-hosted, and github enterprise, github SaaS"
-  },
-  {
-    "objectID": "meetings/index.html",
-    "href": "meetings/index.html",
-    "title": "Meetings",
-    "section": "",
-    "text": "Meeting notes and minutes.\n\n\n\n\n\n\n\n\n  \n\n\n\n\nMeeting 2\n\n\nMeeting notes\n\n\n\n\n\n\n\n\n\nAug 11, 2023\n\n\n\n\n\n\n  \n\n\n\n\nMeeting 1\n\n\nMeeting notes from the first meeting\n\n\n\n\n\n\n\n\n\nJun 23, 2023\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "meetings/minutes/2023-08-11.html",
-    "href": "meetings/minutes/2023-08-11.html",
-    "title": "Meeting 2",
-    "section": "",
-    "text": "Meeting actions:\n\nTheme decided on\nDinakar to draft and share abstract\nJames to load in some example content\nJames to talk to ROpenSci (also include link outs on how to use the r-universe?)"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "Dinakar Kulkanari\nDinakar is the lead of the IDR team at Roche/Genentech in Data & Statistical Sciences, and the general architect of Roche’s strategy for improving businesss developer efficiency, and ensuring we have robust release processes. He’s the data scientist’s go-to person for all things devops.\n\n\n\n\n\n\n\n\n\nBen Straub\nBen Straub is a Principal Programmer at GlaxoSmithKline. You can’t spend much time in the pharmaverse without getting to know Ben and his passion for collaboration. Ben was an instrumental anchor in tying CICD to value in admiral, and is now lending his expertise to guide PharmaDevOps.\n\n\n\n\n\n\n\n\n\nJames Black\nJames Black is a Senior Director, Insights Engineering, at Roche/Genentech in Data & Statistical Sciences. Via sponsoring the Insights Codebase, and being forced to learn daily as the PO/BO of the Clinical and RWE/PHC Scientific Computing Environments respectively, he has a niave passion for tools that make our data scientists more efficient at writing great packages."
+    "text": "The anatomy of a gh-action\n\n\nUnderstanding what makes a github action tick\n\n\n\n\n\n\n\n\n\nOct 23, 2023\n\n\n\n\n\n\n  \n\n\n\n\nExternal references\n\n\nA list of useful external references\n\n\n\n\n\n\n\n\n\nOct 23, 2023\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "post/posts/external-resources.html",
@@ -182,38 +210,10 @@
     "text": "gh-action documention from GitHub\nTidyverse post on CICD for R devs"
   },
   {
-    "objectID": "content/cicdworkflows-minimum/posts/r-cmd-check/r-cmd-check.html",
-    "href": "content/cicdworkflows-minimum/posts/r-cmd-check/r-cmd-check.html",
-    "title": "R CMD Check",
+    "objectID": "meetings/minutes/2023-08-11.html",
+    "href": "meetings/minutes/2023-08-11.html",
+    "title": "Meeting 2",
     "section": "",
-    "text": "About the gh-action\n\n\n\n\n\nExample of use: falcon R package\nExpected output: Fail the pipeline if R CMD Check fails."
-  },
-  {
-    "objectID": "content/cicdworkflows-minimum/posts/r-cmd-check/r-cmd-check.html#why-should-i-use-this",
-    "href": "content/cicdworkflows-minimum/posts/r-cmd-check/r-cmd-check.html#why-should-i-use-this",
-    "title": "R CMD Check",
-    "section": "Why should I use this?",
-    "text": "Why should I use this?\nR CMD Check has around 50 checks, but the general jist is it will check your package is fit to install, and as part of that process run the unit tests. In many companies, you will be running potentially multiple versions of R in parrallel. To reflect that, this gh-action is updated to run across the last 3 R major versions, using a snapshot from the Posit Public Manager that reflects a relevant time frame for when that R version was latest.\nIf you have dependencies on other pharmaverse packages, it’s likely you will also want to run R CMD Check using CRAN today + the bleading edge of the pharmaverse (which may be pre-CRAN) via pointing at their r-universe. If this is the case, please see the advanced usage below."
-  },
-  {
-    "objectID": "content/cicdworkflows-minimum/posts/r-cmd-check/r-cmd-check.html#how-do-i-set-it-up",
-    "href": "content/cicdworkflows-minimum/posts/r-cmd-check/r-cmd-check.html#how-do-i-set-it-up",
-    "title": "R CMD Check",
-    "section": "How do I set it up?",
-    "text": "How do I set it up?\nBelow is an example of using this gh-action whenever someone tries to make PR into your main or devel branch or updates the branch. We recomend you use this on both main and devel branches, as it will help you catch issues before they get into your main branch.\nname: Run R-CMD-check\n# sourced from phuse-org/devops-toolkit\n\non:\n  pull_request:\n    types:\n      - opened\n      - synchronize\n      - reopened\n      - ready_for_review\n    branches:\n      - main\n  push:\n    branches:\n      - main\n  workflow_dispatch:\n\njobs:\n  check:\n    name: Check\n    uses: phuse-org/devops-toolkit/.github/workflows/R-CMD-check.yml@main"
-  },
-  {
-    "objectID": "content/cicdworkflows-minimum/posts/r-cmd-check/r-cmd-check.html#the-deets",
-    "href": "content/cicdworkflows-minimum/posts/r-cmd-check/r-cmd-check.html#the-deets",
-    "title": "R CMD Check",
-    "section": "The deets",
-    "text": "The deets"
-  },
-  {
-    "objectID": "content/cicdworkflows-minimum/posts/r-cmd-check/r-cmd-check.html#advanced-use",
-    "href": "content/cicdworkflows-minimum/posts/r-cmd-check/r-cmd-check.html#advanced-use",
-    "title": "R CMD Check",
-    "section": "Advanced use",
-    "text": "Advanced use\nTODO: Add here how to also run against pharmaverse’s r-universe latest & the latest release of PPM packages."
+    "text": "Meeting actions:\n\nTheme decided on\nDinakar to draft and share abstract\nJames to load in some example content\nJames to talk to ROpenSci (also include link outs on how to use the r-universe?)"
   }
 ]
