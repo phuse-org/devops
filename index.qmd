@@ -56,7 +56,7 @@ toc: false
 ## Welcome to the home of **PharmaDevOps**
 This PHUSE working group is initially focussed on ensuring R package authors 
 can easily add CICD to pharmaverse R packages 
-and related biostastical packages.
+and related biostatistical packages.
 
 Our aim is not to re-invent the wheel. We hope to both 
 convince package developers of the value of CICD, 
@@ -81,7 +81,7 @@ set of tools to make it easy to implement.
 
 In this guidance, you'll see a number of `gh-actions` that you can use to implement CICD on your project. We have categorised these into three groups:
 
-- *Minimum CICD*: These are the minimum CICD tools we recommend for all packages, including those in the `pharmaverse` and `openstatsware`. These CICD tools are focussed on ensuring your package works, and documentation matches the code.
+- *Minimum CICD*: These are the minimum CICD tools we recommend for all packages, including those in the `pharmaverse` and `openstatsware`. These CICD tools are focussed on ensuring your package works, and the documentation users see matches the latest release of your code.
 - *Recommended CICD*: These are tools we feel make your life developing and releasing robust code easier.
 - *Enhanced CICD*: These are tools are option tools for power users, or those with specific needs.
 
@@ -94,15 +94,6 @@ A recomended plan for success in implenting CICD on your project is to:
 - Implement CICD on your git repo!
 
 We've also collected togther [this list of external learning resources](post/posts/external-resources.html).
-
-<!--# Notes on getting started 
-Provide a master version (e.g. here's a single file with all the recomended) [TODO]
-How the triggers work is confusing, and changing CICD based on what's happening (PR to specific branch) - deeper dive on how to automate checks in workflow, e.g. catch bugs before main [TODO]
-Ensure we put upfront what the benefit is for each recomended (e.g. coverage gives you a badge, version bumping updates your description file, keeping built artifacts like docs out of the main code, etc) [TODO]
-Flag important parameters with notes in the gh-action code so users can understand what's going on [TODO]
-Enabling advanced workflows - e.g. test against current prod branch of the pharmaverse r-universe [TODO]
-Should we have badge if they meet minimum cicd? [TODO]
--->
 
 :::
 :::
@@ -121,7 +112,11 @@ Should we have badge if they meet minimum cicd? [TODO]
 
 The following CICD is what we consider a minimum bar for a 
 package on the pharmaverse. These CICD tools are focussed on 
-ensuring your package works, and documentation matches the code.
+ensuring your package works, and documentation matches the code. 
+
+There is no need to use the specific code we suggest, if you are happy getting 
+the same functionality from another source, like the ones
+built into `usethis`.
 
 
 </a> 
@@ -155,7 +150,7 @@ releasing robust code easier.
 
 ## Enhanced CICD
 
-The following CICD are tools are option tools for power users. 
+The following CICD are tools are optional tools for power users. 
 
 </a> 
 
