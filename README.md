@@ -1,4 +1,4 @@
-<img align="right" width="250" height="250" src="https://github.com/phuse-org/devops/blob/main/assets/PharmaDevOps.png?raw=true"> 
+<img align="right" width="250" height="250" src="https://github.com/phuse-org/devops/blob/main/assets/PharmaDevOps.png?raw=true">
 
 # PharmaDevOps
 

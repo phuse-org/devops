@@ -1,7 +1,7 @@
 ---
 title: "Check links"
 description: |
-  This workflow checks whether URLs embedded in code and documentation are valid. Invalid URLs result in workflow failures. 
+  This workflow checks whether URLs embedded in code and documentation are valid. Invalid URLs result in workflow failures.
 categories:
   - Documentation
   - Links
@@ -20,7 +20,7 @@ toc: true
 
 ## Why should I use this?
 
-As a codebase grows, it becomes more likely you will end up with a number of links in your documentation. 
+As a codebase grows, it becomes more likely you will end up with a number of links in your documentation.
 These links can stop working over time - and often you won't know till a user flags your links are broken.
 
 This `gh-action` lets you stay on top of broken links, by actively scanning for them.
@@ -30,7 +30,7 @@ This `gh-action` lets you stay on top of broken links, by actively scanning for 
 Below is an example of using this `gh-action` whenever someone tries to make PR into your `main` or `devel` branch.
 
 
-```bash
+```yaml
 name: Check URLs in docs 📚
 # sourced from phuse-org/devops-toolkit
 

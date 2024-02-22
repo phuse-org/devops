@@ -9,13 +9,13 @@ search: true
 GitHub Actions are a powerful automation and CI/CD (Continuous Integration/Continuous Deployment) platform provided by GitHub. It allows you to automate various tasks and workflows in response to events that occur in your GitHub repositories. Actions are defined using `YAML` files that specify the workflow to be executed. The workflow file typically has a `.yml` extension. Below is an explanation of the key syntax elements in a GitHub Actions workflow file as an annotated example:
 
 ```yaml
-# Name: You can specify a name for your workflow. 
-# This is a human-readable description of the workflow 
+# Name: You can specify a name for your workflow.
+# This is a human-readable description of the workflow
 # and is not required for the workflow to function.
 name: My CI/CD Workflow
 
-# on: This specifies the events that trigger the workflow. 
-# You can set it to various events like pushes to a 
+# on: This specifies the events that trigger the workflow.
+# You can set it to various events like pushes to a
 # repository, pull requests, or even a schedule.
 on:
   push:
@@ -25,17 +25,17 @@ on:
     branches:
       - master
 
-# jobs: This is the main section of the workflow file. 
-# It defines the jobs that are to be executed when 
+# jobs: This is the main section of the workflow file.
+# It defines the jobs that are to be executed when
 # the workflow is triggered.
 jobs:
   build:
-    runs-on: ubuntu-latest # Specifies the type of virtual 
-    # machine or runner on which the job will run. GitHub 
-    # provides various runners for different platforms, 
+    runs-on: ubuntu-latest # Specifies the type of virtual
+    # machine or runner on which the job will run. GitHub
+    # provides various runners for different platforms,
     # including Windows, Linux, and macOS.
-    steps: # Contains a list of steps that are executed 
-    # in the specified order. Steps are individual 
+    steps: # Contains a list of steps that are executed
+    # in the specified order. Steps are individual
     # tasks within a job.
       - name: Checkout code
         uses: actions/checkout@v2
