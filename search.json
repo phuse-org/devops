@@ -60,7 +60,7 @@
     "href": "content/cicdworkflows-minimum/posts/r-cmd-check/r-cmd-check.html#advanced-use",
     "title": "R CMD Check",
     "section": "Advanced use",
-    "text": "Advanced use\nTODO: Add here how to also run against pharmaverse’s r-universe latest & the latest release of PPM packages."
+    "text": "Advanced use\n\nUsing other CRAN-like repositories\nTo use other CRAN-like repositories in your workflow, you can specify them using the extra-repositories option in the workflow file. This is particularly useful if your package depends on packages not available on CRAN or if you want to use the latest versions of packages from a specific repository.\nIn the example below, we add two additional repositories: https://pharmaverse.r-universe.dev/ and https://insightsengineering.r-universe.dev/. These repositories are added in a whitespace-separated list to the extra-repositories option. This allows R CMD Check to access packages from these repositories as well as CRAN.\nname: Run R-CMD-check\n\n# Specify the event types here\n\njobs:\n  check:\n    name: Check\n    uses: phuse-org/devops-toolkit/.github/workflows/R-CMD-check.yml@main\n    # Use the option to add extra repositories.\n    # One or more repositories can be added in a whitespace-separated list.\n    # In the example below, we add https://pharmaverse.r-universe.dev/ and\n    # https://insightsengineering.r-universe.dev/ as additional repositories.\n    with:\n      extra-repositories: \"https://pharmaverse.r-universe.dev/ https://insightsengineering.r-universe.dev/\""
   },
   {
     "objectID": "about.html",

@@ -201,7 +201,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#why-should-i-use-this" id="toc-why-should-i-use-this" class="nav-link active" data-scroll-target="#why-should-i-use-this">Why should I use this?</a></li>
   <li><a href="#how-do-i-set-it-up" id="toc-how-do-i-set-it-up" class="nav-link" data-scroll-target="#how-do-i-set-it-up">How do I set it up?</a></li>
   <li><a href="#the-deets" id="toc-the-deets" class="nav-link" data-scroll-target="#the-deets">The deets</a></li>
-  <li><a href="#advanced-use" id="toc-advanced-use" class="nav-link" data-scroll-target="#advanced-use">Advanced use</a></li>
+  <li><a href="#advanced-use" id="toc-advanced-use" class="nav-link" data-scroll-target="#advanced-use">Advanced use</a>
+  <ul class="collapse">
+  <li><a href="#using-other-cran-like-repositories" id="toc-using-other-cran-like-repositories" class="nav-link" data-scroll-target="#using-other-cran-like-repositories">Using other CRAN-like repositories</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/phuse-org/devops/edit/main/content/cicdworkflows-minimum/posts/r-cmd-check/r-cmd-check.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/phuse-org/devops/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -291,9 +294,27 @@ About the gh-action
 </section>
 <section id="advanced-use" class="level2">
 <h2 class="anchored" data-anchor-id="advanced-use">Advanced use</h2>
-<p>TODO: Add here how to also run against pharmaverse’s r-universe latest &amp; the latest release of PPM packages.</p>
+<section id="using-other-cran-like-repositories" class="level3">
+<h3 class="anchored" data-anchor-id="using-other-cran-like-repositories">Using other CRAN-like repositories</h3>
+<p>To use other CRAN-like repositories in your workflow, you can specify them using the <code>extra-repositories</code> option in the workflow file. This is particularly useful if your package depends on packages not available on CRAN or if you want to use the latest versions of packages from a specific repository.</p>
+<p>In the example below, we add two additional repositories: <code>https://pharmaverse.r-universe.dev/</code> and <code>https://insightsengineering.r-universe.dev/</code>. These repositories are added in a whitespace-separated list to the <code>extra-repositories</code> option. This allows <code>R CMD Check</code> to access packages from these repositories as well as CRAN.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> Run R-CMD-check</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Specify the event types here</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">jobs</span><span class="kw">:</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">check</span><span class="kw">:</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Check</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> phuse-org/devops-toolkit/.github/workflows/R-CMD-check.yml@main</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co">    # Use the option to add extra repositories.</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co">    # One or more repositories can be added in a whitespace-separated list.</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co">    # In the example below, we add https://pharmaverse.r-universe.dev/ and</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co">    # https://insightsengineering.r-universe.dev/ as additional repositories.</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">extra-repositories</span><span class="kw">:</span><span class="at"> </span><span class="st">"https://pharmaverse.r-universe.dev/ https://insightsengineering.r-universe.dev/"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
