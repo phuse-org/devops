@@ -1,7 +1,7 @@
 ---
 title: "R CMD Check"
 description: |
-  Ensure that when you release your package, all the unit tests are passing and it works in a clean environment. 
+  Ensure that when you release your package, all the unit tests are passing and it works in a clean environment.
 categories:
   - Testing
 date: 2023-08-23
@@ -19,9 +19,9 @@ toc: true
 
 ## Why should I use this?
 
-`R CMD Check` has [around 50 checks](https://r-pkgs.org/R-CMD-check.html), but the general jist is it will check your package is fit to install, and as part of that process run the unit tests. In many companies, you will 
-be running potentially multiple versions of R in parrallel. To reflect 
-that, this gh-action is updated to run across the last 3 R major versions, 
+`R CMD Check` has [around 50 checks](https://r-pkgs.org/R-CMD-check.html), but the general jist is it will check your package is fit to install, and as part of that process run the unit tests. In many companies, you will
+be running potentially multiple versions of R in parrallel. To reflect
+that, this gh-action is updated to run across the last 3 R major versions,
 using a snapshot from the Posit Public Package Manager that reflects a relevant time frame for when that R version was latest.
 
 If you have dependencies on other pharmaverse packages, it's likely you will also want to run `R CMD Check` using CRAN today + the bleading edge of the pharmaverse (which may be pre-CRAN) via pointing at their r-universe. If this is the case, please see the advanced usage below.
@@ -31,7 +31,7 @@ If you have dependencies on other pharmaverse packages, it's likely you will als
 Below is an example of using this `gh-action` whenever someone tries to make PR into your `main` or `devel` branch or updates the branch. We recomend you use this on both `main` and `devel` branches, as it will help you catch issues before they get into your main branch.
 
 
-```bash
+```yaml
 name: Run R-CMD-check
 # sourced from phuse-org/devops-toolkit
 

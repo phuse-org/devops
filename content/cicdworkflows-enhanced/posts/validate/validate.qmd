@@ -1,7 +1,7 @@
 ---
 title: "theValidator"
 description: |
-  This workflow will take your documentation, and link it to unit testing, creating a report that links requirements (documentation) to tests of those requirements. 
+  This workflow will take your documentation, and link it to unit testing, creating a report that links requirements (documentation) to tests of those requirements.
 categories:
   - Testing
   - Documentation
@@ -21,15 +21,15 @@ toc: true
 
 ## Why should I use this?
 
-Validation is not a fixed term, and it is strongly recommended to make yourself aware of the work of the R Validation Hub (https://www.pharmar.org/), including the 
+Validation is not a fixed term, and it is strongly recommended to make yourself aware of the work of the R Validation Hub (https://www.pharmar.org/), including the
 regulatory repo project.
 
-When using an R package, it is important to know that what the documentation claims the package does is tested, and these tests pass on the 
-environment you will be using. This gh-action generates a generic report, that takes the documentation and links it to the 
-unit tests, and records how the the tests performed against a specific R environment. 
+When using an R package, it is important to know that what the documentation claims the package does is tested, and these tests pass on the
+environment you will be using. This gh-action generates a generic report, that takes the documentation and links it to the
+unit tests, and records how the the tests performed against a specific R environment.
 
-The aim here is to who in a pan-company way to document the relationship between documentation and tests. Before 
-using internally, you would need to 1) confirm the documentation is well written, 2) the unit tests are sufficient to 
+The aim here is to who in a pan-company way to document the relationship between documentation and tests. Before
+using internally, you would need to 1) confirm the documentation is well written, 2) the unit tests are sufficient to
 test that documentation and 3) you are assessing against the actual environments you use internally.
 
 ## How do I set it up?
@@ -37,7 +37,7 @@ test that documentation and 3) you are assessing against the actual environments
 Below is an example of using this `gh-action` when a release is made.
 
 
-```bash
+```yaml
 ---
 name: R Package Validation report
 

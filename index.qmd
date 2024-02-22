@@ -10,7 +10,7 @@ image: assets/PharmaDevOps.png
 
 listing:
   - id: cicdworkflows-minimum
-    contents: 
+    contents:
     - /content/cicdworkflows-minimum
     - "!index.qmd"
     sort: "date desc"
@@ -21,7 +21,7 @@ listing:
     max-items: 24
     feed: false
   - id: cicdworkflows-recommend
-    contents: 
+    contents:
     - /content/cicdworkflows-recommend
     - "!index.qmd"
     sort: "date desc"
@@ -32,7 +32,7 @@ listing:
     max-items: 24
     feed: false
   - id: cicdworkflows-enhanced
-    contents: 
+    contents:
     - /content/cicdworkflows-enhanced
     - "!index.qmd"
     sort: "date desc"
@@ -54,13 +54,13 @@ toc: false
 ::: grid
 ::: {.g-col-12 .g-col-lg-8 .top-story-text}
 ## Welcome to the home of **PharmaDevOps**
-This PHUSE working group is initially focussed on ensuring R package authors 
-can easily add CICD to pharmaverse R packages 
+This PHUSE working group is initially focussed on ensuring R package authors
+can easily add CICD to pharmaverse R packages
 and related biostatistical packages.
 
-Our aim is not to re-invent the wheel. We hope to both 
-convince package developers of the value of CICD, 
-provide a minimum bar of what is expected, and provide a 
+Our aim is not to re-invent the wheel. We hope to both
+convince package developers of the value of CICD,
+provide a minimum bar of what is expected, and provide a
 set of tools to make it easy to implement.
 :::
 ::: {.g-col-12 .g-col-lg-4 .top-story-img}
@@ -110,16 +110,16 @@ We've also collected togther [this list of external learning resources](post/pos
 
 ## Minimum CICD
 
-The following CICD is what we consider a minimum bar for a 
-package on the pharmaverse. These CICD tools are focussed on 
-ensuring your package works, and documentation matches the code. 
+The following CICD is what we consider a minimum bar for a
+package on the pharmaverse. These CICD tools are focussed on
+ensuring your package works, and documentation matches the code.
 
-There is no need to use the specific code we suggest, if you are happy getting 
+There is no need to use the specific code we suggest, if you are happy getting
 the same functionality from another source, like the ones
 built into `usethis`.
 
 
-</a> 
+</a>
 
 ::: {#cicdworkflows-minimum}
 :::
@@ -133,10 +133,10 @@ built into `usethis`.
 
 ## Recommended CICD
 
-The following CICD are tools we feel make your life developing and 
-releasing robust code easier. 
+The following CICD are tools we feel make your life developing and
+releasing robust code easier.
 
-</a> 
+</a>
 
 ::: {#cicdworkflows-recommend}
 :::
@@ -150,9 +150,9 @@ releasing robust code easier.
 
 ## Enhanced CICD
 
-The following CICD are tools are optional tools for power users. 
+The following CICD are tools are optional tools for power users.
 
-</a> 
+</a>
 
 ::: {#cicdworkflows-enhanced}
 :::
