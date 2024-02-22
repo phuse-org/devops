@@ -198,9 +198,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#why-should-i-use-this" id="toc-why-should-i-use-this" class="nav-link active" data-scroll-target="#why-should-i-use-this">Why should I use this?</a></li>
   <li><a href="#how-do-i-set-it-up" id="toc-how-do-i-set-it-up" class="nav-link" data-scroll-target="#how-do-i-set-it-up">How do I set it up?</a></li>
   <li><a href="#the-deets" id="toc-the-deets" class="nav-link" data-scroll-target="#the-deets">The deets</a></li>
-  <li><a href="#why-should-i-use-this-1" id="toc-why-should-i-use-this-1" class="nav-link" data-scroll-target="#why-should-i-use-this-1">Why should I use this?</a></li>
-  <li><a href="#how-do-i-set-it-up-1" id="toc-how-do-i-set-it-up-1" class="nav-link" data-scroll-target="#how-do-i-set-it-up-1">How do I set it up?</a></li>
-  <li><a href="#the-deets-1" id="toc-the-deets-1" class="nav-link" data-scroll-target="#the-deets-1">The deets</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/phuse-org/devops/edit/main/content/cicdworkflows-minimum/posts/code-coverage.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/phuse-org/devops/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -235,7 +232,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2023-08-01</p>
+      <p class="date">August 1, 2023</p>
     </div>
   </div>
   
@@ -258,111 +255,43 @@ About the gh-action
 <div id="callout-1" class="callout-1-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p><strong>Example of use:</strong> <a href="https://github.com/pharmaverse/falcon/blob/use-phuse-cicd/.github/workflows/phuse-basics.yml">falcon R package</a></p>
-<p><strong>Expected output:</strong> Badge (<img src="https://github.com/pharmaverse/admiralci/actions/workflows/code-coverage.yml/badge.svg" class="img-fluid" alt="Code Coverage">) or change pipeline depending on reported code coverage.</p>
 </div>
 </div>
 </div>
 <section id="why-should-i-use-this" class="level2">
 <h2 class="anchored" data-anchor-id="why-should-i-use-this">Why should I use this?</h2>
 <p>This workflow measures code coverage for unit tests and reports the code coverage as a percentage of the <em>total number of lines covered by unit tests</em> vs.&nbsp;the <em>total number of lines in the codebase</em> in an R package.</p>
-<p>Using this github action gives you a badge that helps to show that the code is coverage. Calculating this via CICD is useful as the amount of untested code can vary, e.g.&nbsp;a new feature is added but it is not tested. People often use this metric as an indicator of code quality and maturity.</p>
 <p>It’s important to note that code coverage is only telling you if a test exists, not that the test is testing all that should be tested against that line of code.</p>
 <p>For information on how to add testing to R packages, <a href="https://r-pkgs.org/testing-basics.html">R-pkgs.org</a> covers setting up tests with test that.</p>
 </section>
 <section id="how-do-i-set-it-up" class="level2">
 <h2 class="anchored" data-anchor-id="how-do-i-set-it-up">How do I set it up?</h2>
-<p>You can call this action via adding a call to this job in a github action. A minimal example that runs this on commits to master is:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">name:</span> Code coverage</span>
+<p>You can call this action via adding a call to this job in a GitHub Actions workflow. A minimal example that runs this on commits to master is:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> Code coverage</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># sourced from phuse-org/devops-toolkit</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">on:</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="ex">pull_request:</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="ex">types:</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>      <span class="ex">-</span> opened</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>      <span class="ex">-</span> synchronize</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>      <span class="ex">-</span> reopened</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>      <span class="ex">-</span> ready_for_review</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="ex">branches:</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>      <span class="ex">-</span> main</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="ex">push:</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="ex">branches:</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>      <span class="ex">-</span> main</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="ex">workflow_dispatch:</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">on</span><span class="kw">:</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pull_request</span><span class="kw">:</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">types</span><span class="kw">:</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> opened</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> synchronize</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> reopened</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> ready_for_review</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">branches</span><span class="kw">:</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> main</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">push</span><span class="kw">:</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">branches</span><span class="kw">:</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> main</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">workflow_dispatch</span><span class="kw">:</span></span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="ex">jobs:</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  <span class="ex">coverage:</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    <span class="ex">name:</span> Code Coverage</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    <span class="ex">uses:</span> phuse-org/devops-toolkit/.github/workflows/test-coverage.yml@main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">jobs</span><span class="kw">:</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">coverage</span><span class="kw">:</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Code Coverage</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> phuse-org/devops-toolkit/.github/workflows/test-coverage.yml@main</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="the-deets" class="level2">
 <h2 class="anchored" data-anchor-id="the-deets">The deets</h2>
 <p>The <a href="https://covr.r-lib.org/"><code>covr</code></a> R package is used to calculate the coverage.</p>
-<p>Report summaries and badges for coverage are generated using a series of other GitHub Actions.</p>
-<p>For this workflow to execute successfully, you will need to create an orphan branch called <code>badges</code> in your GitHub repository. You can do that using the following steps:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create orphan branch</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout <span class="at">--orphan</span> badges</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Back up files</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> .git /tmp/.git-backup</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove everything else</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="at">-rf</span> <span class="pp">*</span> .<span class="pp">*</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Restore git files</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> /tmp/.git-backup .git</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a README file</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"# Badges"</span> <span class="op">&gt;</span> README.md</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Add, commit and push your new branch</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add . <span class="kw">&amp;&amp;</span> <span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Init badges"</span> <span class="kw">&amp;&amp;</span> <span class="fu">git</span> push origin badges</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="callout callout-style-default callout-note callout-titled" style="margin-top: 0rem;">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-About the gh-action
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
-<div class="callout-body-container callout-body">
-<p><strong>Lifecycle stage:</strong> Not reported</p>
-<p><strong>Example of use:</strong> <a href="https://github.com/pharmaverse/admiralci#links">admiral R package</a></p>
-<p><strong>Source:</strong> Pharmaverse gh-action maintained by Roche/Genentech</p>
-<p><strong>Expected output:</strong> Stop or warn in pipeline if links are broken.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="why-should-i-use-this-1" class="level2">
-<h2 class="anchored" data-anchor-id="why-should-i-use-this-1">Why should I use this?</h2>
-<p>As your documentation grows, it’s likely the number of links present do as well. This gh-action helps to make sure that if you link to an external website, you can be informed if that link stops working.</p>
-</section>
-<section id="how-do-i-set-it-up-1" class="level2">
-<h2 class="anchored" data-anchor-id="how-do-i-set-it-up-1">How do I set it up?</h2>
-<p>You can call this action via adding a call to this job in a github action. A minimal example that runs this on PRs to <code>main</code> is:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">---</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Source: https://github.com/pharmaverse/admiralci</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Common workflows designed for Admiral</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># but can be easily used by any other R package</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="ex">name:</span> admiral CI/CD Workflows</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="ex">on:</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="ex">push:</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="ex">branches:</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>      <span class="ex">-</span> main</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 'pull_request' events are triggered when PRs are</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="co"># created against one of these target branches.</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  <span class="ex">pull_request:</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    <span class="ex">branches:</span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>      <span class="ex">-</span> main</span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="ex">jobs:</span></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>  <span class="ex">links:</span></span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    <span class="ex">name:</span> Links</span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    <span class="ex">uses:</span> pharmaverse/admiralci/.github/workflows/links.yml@main</span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>    <span class="ex">if:</span> github.event_name == <span class="st">'pull_request'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="the-deets-1" class="level2">
-<h2 class="anchored" data-anchor-id="the-deets-1">The deets</h2>
-<p>This gh-action uses lychee. If there are false positives, you can create a <code>.lycheeignore</code> file. There is an example <a href="https://github.com/pharmaverse/admiral/blob/devel/.lycheeignore">here of how this is done in <code>admiral</code></a>.</p>
 
 
 </section>

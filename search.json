@@ -18,7 +18,7 @@
     "href": "post/posts/gh-actions.html",
     "title": "The anatomy of a gh-action",
     "section": "",
-    "text": "GitHub Actions are a powerful automation and CI/CD (Continuous Integration/Continuous Deployment) platform provided by GitHub. It allows you to automate various tasks and workflows in response to events that occur in your GitHub repositories. Actions are defined using YAML files that specify the workflow to be executed. The workflow file typically has a .yml extension. Below is an explanation of the key syntax elements in a GitHub Actions workflow file as an annotated example:\n# Name: You can specify a name for your workflow. \n# This is a human-readable description of the workflow \n# and is not required for the workflow to function.\nname: My CI/CD Workflow\n\n# on: This specifies the events that trigger the workflow. \n# You can set it to various events like pushes to a \n# repository, pull requests, or even a schedule.\non:\n  push:\n    branches:\n      - master\n  pull_request:\n    branches:\n      - master\n\n# jobs: This is the main section of the workflow file. \n# It defines the jobs that are to be executed when \n# the workflow is triggered.\njobs:\n  build:\n    runs-on: ubuntu-latest # Specifies the type of virtual \n    # machine or runner on which the job will run. GitHub \n    # provides various runners for different platforms, \n    # including Windows, Linux, and macOS.\n    steps: # Contains a list of steps that are executed \n    # in the specified order. Steps are individual \n    # tasks within a job.\n      - name: Checkout code\n        uses: actions/checkout@v2"
+    "text": "GitHub Actions are a powerful automation and CI/CD (Continuous Integration/Continuous Deployment) platform provided by GitHub. It allows you to automate various tasks and workflows in response to events that occur in your GitHub repositories. Actions are defined using YAML files that specify the workflow to be executed. The workflow file typically has a .yml extension. Below is an explanation of the key syntax elements in a GitHub Actions workflow file as an annotated example:\n# Name: You can specify a name for your workflow.\n# This is a human-readable description of the workflow\n# and is not required for the workflow to function.\nname: My CI/CD Workflow\n\n# on: This specifies the events that trigger the workflow.\n# You can set it to various events like pushes to a\n# repository, pull requests, or even a schedule.\non:\n  push:\n    branches:\n      - master\n  pull_request:\n    branches:\n      - master\n\n# jobs: This is the main section of the workflow file.\n# It defines the jobs that are to be executed when\n# the workflow is triggered.\njobs:\n  build:\n    runs-on: ubuntu-latest # Specifies the type of virtual\n    # machine or runner on which the job will run. GitHub\n    # provides various runners for different platforms,\n    # including Windows, Linux, and macOS.\n    steps: # Contains a list of steps that are executed\n    # in the specified order. Steps are individual\n    # tasks within a job.\n      - name: Checkout code\n        uses: actions/checkout@v2"
   },
   {
     "objectID": "contact.html",
@@ -137,7 +137,7 @@
     "href": "content/cicdworkflows-minimum/posts/pkgdown.html#how-do-i-set-it-up",
     "title": "Generate pkgdown documentation",
     "section": "How do I set it up?",
-    "text": "How do I set it up?\nYou can call this action via adding a call to this job in a github action. A minimal example that runs this on commits to main is:\n---\nname: Docs 📚\n\non:\n  push:\n    branches:\n      - main\n\njobs:\n  docs:\n    name: Pkgdown Docs 📚\n    uses: phuse-org/devops-toolkit/.github/workflows/pkgdown.yml@main"
+    "text": "How do I set it up?\nYou can call this action via adding a call to this job in a GitHub Actions workflow. A minimal example that runs this on commits to main is:\n---\nname: Docs 📚\n\non:\n  push:\n    branches:\n      - main\n\njobs:\n  docs:\n    name: Pkgdown Docs 📚\n    uses: phuse-org/devops-toolkit/.github/workflows/pkgdown.yml@main"
   },
   {
     "objectID": "content/cicdworkflows-minimum/posts/pkgdown.html#the-deets",
@@ -151,56 +151,35 @@
     "href": "content/cicdworkflows-minimum/posts/code-coverage.html",
     "title": "Check code coverage",
     "section": "",
-    "text": "About the gh-action\n\n\n\n\n\nExample of use: falcon R package\nExpected output: Badge () or change pipeline depending on reported code coverage."
+    "text": "About the gh-action\n\n\n\n\n\nExample of use: falcon R package"
   },
   {
     "objectID": "content/cicdworkflows-minimum/posts/code-coverage.html#why-should-i-use-this",
     "href": "content/cicdworkflows-minimum/posts/code-coverage.html#why-should-i-use-this",
     "title": "Check code coverage",
     "section": "Why should I use this?",
-    "text": "Why should I use this?\nThis workflow measures code coverage for unit tests and reports the code coverage as a percentage of the total number of lines covered by unit tests vs. the total number of lines in the codebase in an R package.\nUsing this github action gives you a badge that helps to show that the code is coverage. Calculating this via CICD is useful as the amount of untested code can vary, e.g. a new feature is added but it is not tested. People often use this metric as an indicator of code quality and maturity.\nIt’s important to note that code coverage is only telling you if a test exists, not that the test is testing all that should be tested against that line of code.\nFor information on how to add testing to R packages, R-pkgs.org covers setting up tests with test that."
+    "text": "Why should I use this?\nThis workflow measures code coverage for unit tests and reports the code coverage as a percentage of the total number of lines covered by unit tests vs. the total number of lines in the codebase in an R package.\nIt’s important to note that code coverage is only telling you if a test exists, not that the test is testing all that should be tested against that line of code.\nFor information on how to add testing to R packages, R-pkgs.org covers setting up tests with test that."
   },
   {
     "objectID": "content/cicdworkflows-minimum/posts/code-coverage.html#how-do-i-set-it-up",
     "href": "content/cicdworkflows-minimum/posts/code-coverage.html#how-do-i-set-it-up",
     "title": "Check code coverage",
     "section": "How do I set it up?",
-    "text": "How do I set it up?\nYou can call this action via adding a call to this job in a github action. A minimal example that runs this on commits to master is:\nname: Code coverage\n# sourced from phuse-org/devops-toolkit\n\non:\n  pull_request:\n    types:\n      - opened\n      - synchronize\n      - reopened\n      - ready_for_review\n    branches:\n      - main\n  push:\n    branches:\n      - main\n  workflow_dispatch:\n\njobs:\n  coverage:\n    name: Code Coverage\n    uses: phuse-org/devops-toolkit/.github/workflows/test-coverage.yml@main"
+    "text": "How do I set it up?\nYou can call this action via adding a call to this job in a GitHub Actions workflow. A minimal example that runs this on commits to master is:\nname: Code coverage\n# sourced from phuse-org/devops-toolkit\n\non:\n  pull_request:\n    types:\n      - opened\n      - synchronize\n      - reopened\n      - ready_for_review\n    branches:\n      - main\n  push:\n    branches:\n      - main\n  workflow_dispatch:\n\njobs:\n  coverage:\n    name: Code Coverage\n    uses: phuse-org/devops-toolkit/.github/workflows/test-coverage.yml@main"
   },
   {
     "objectID": "content/cicdworkflows-minimum/posts/code-coverage.html#the-deets",
     "href": "content/cicdworkflows-minimum/posts/code-coverage.html#the-deets",
     "title": "Check code coverage",
     "section": "The deets",
-    "text": "The deets\nThe covr R package is used to calculate the coverage.\nReport summaries and badges for coverage are generated using a series of other GitHub Actions.\nFor this workflow to execute successfully, you will need to create an orphan branch called badges in your GitHub repository. You can do that using the following steps:\n# Create orphan branch\ngit checkout --orphan badges\n# Back up files\nmv .git /tmp/.git-backup\n# Remove everything else\nrm -rf * .*\n# Restore git files\nmv /tmp/.git-backup .git\n# Create a README file\necho \"# Badges\" &gt; README.md\n# Add, commit and push your new branch\ngit add . && git commit -m \"Init badges\" && git push origin badges\n\n\n\n\n\n\nAbout the gh-action\n\n\n\n\n\nLifecycle stage: Not reported\nExample of use: admiral R package\nSource: Pharmaverse gh-action maintained by Roche/Genentech\nExpected output: Stop or warn in pipeline if links are broken."
-  },
-  {
-    "objectID": "content/cicdworkflows-minimum/posts/code-coverage.html#why-should-i-use-this-1",
-    "href": "content/cicdworkflows-minimum/posts/code-coverage.html#why-should-i-use-this-1",
-    "title": "Check code coverage",
-    "section": "Why should I use this?",
-    "text": "Why should I use this?\nAs your documentation grows, it’s likely the number of links present do as well. This gh-action helps to make sure that if you link to an external website, you can be informed if that link stops working."
-  },
-  {
-    "objectID": "content/cicdworkflows-minimum/posts/code-coverage.html#how-do-i-set-it-up-1",
-    "href": "content/cicdworkflows-minimum/posts/code-coverage.html#how-do-i-set-it-up-1",
-    "title": "Check code coverage",
-    "section": "How do I set it up?",
-    "text": "How do I set it up?\nYou can call this action via adding a call to this job in a github action. A minimal example that runs this on PRs to main is:\n---\n# Source: https://github.com/pharmaverse/admiralci\n# Common workflows designed for Admiral\n# but can be easily used by any other R package\nname: admiral CI/CD Workflows\n\non:\n  push:\n    branches:\n      - main\n  # 'pull_request' events are triggered when PRs are\n  # created against one of these target branches.\n  pull_request:\n    branches:\n      - main\n\njobs:\n  links:\n    name: Links\n    uses: pharmaverse/admiralci/.github/workflows/links.yml@main\n    if: github.event_name == 'pull_request'"
-  },
-  {
-    "objectID": "content/cicdworkflows-minimum/posts/code-coverage.html#the-deets-1",
-    "href": "content/cicdworkflows-minimum/posts/code-coverage.html#the-deets-1",
-    "title": "Check code coverage",
-    "section": "The deets",
-    "text": "The deets\nThis gh-action uses lychee. If there are false positives, you can create a .lycheeignore file. There is an example here of how this is done in admiral."
+    "text": "The deets\nThe covr R package is used to calculate the coverage."
   },
   {
     "objectID": "post/index.html",
     "href": "post/index.html",
     "title": "Posts",
     "section": "",
-    "text": "The anatomy of a gh-action\n\n\nUnderstanding what makes a github action tick\n\n\n\n\n\n\n\n\n\nOct 23, 2023\n\n\n\n\n\n\n  \n\n\n\n\nExternal references\n\n\nA list of useful external references\n\n\n\n\n\n\n\n\n\nOct 23, 2023\n\n\n\n\n\n\nNo matching items"
+    "text": "The anatomy of a gh-action\n\n\nUnderstanding what makes a GitHub Actions workflow tick\n\n\n\n\n\n\n\n\n\nOct 23, 2023\n\n\n\n\n\n\n  \n\n\n\n\nExternal references\n\n\nA list of useful external references\n\n\n\n\n\n\n\n\n\nOct 23, 2023\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "post/posts/external-resources.html",
