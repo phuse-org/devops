@@ -15,9 +15,6 @@ toc: true
 ## About the gh-action
 
 **Example of use:** [falcon R package](https://github.com/pharmaverse/falcon/blob/use-phuse-cicd/.github/workflows/phuse-basics.yml)
-
-**Expected output:** Badge (![Code
-Coverage](https://github.com/pharmaverse/admiralci/actions/workflows/code-coverage.yml/badge.svg)) or change pipeline depending on reported code coverage.
 :::
 
 ## Why should I use this?
@@ -25,9 +22,6 @@ Coverage](https://github.com/pharmaverse/admiralci/actions/workflows/code-covera
 This workflow measures code coverage for unit tests and reports the code
 coverage as a percentage of the *total number of lines covered by unit
 tests* vs. the *total number of lines in the codebase* in an R package.
-
-Using this github action gives you a badge that helps to show that the code is coverage. Calculating this
-via CICD is useful as the amount of untested code can vary, e.g. a new feature is added but it is not tested. People often use this metric as an indicator of code quality and maturity.
 
 It's important to note that code coverage is only telling you if a test exists, not that the test is
 testing all that should be tested against that line of code.
@@ -37,7 +31,7 @@ setting up tests with test that.
 
 ## How do I set it up?
 
-You can call this action via adding a call to this job in a github action. A minimal example
+You can call this action via adding a call to this job in a GitHub Actions workflow. A minimal example
 that runs this on commits to master is:
 
 ```yaml

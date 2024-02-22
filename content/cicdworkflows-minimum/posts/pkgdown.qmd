@@ -32,7 +32,7 @@ This is important for multiple reasons:
 
 ## How do I set it up?
 
-You can call this action via adding a call to this job in a github action. A minimal example
+You can call this action via adding a call to this job in a GitHub Actions workflow. A minimal example
 that runs this on commits to main is:
 
 ```yaml

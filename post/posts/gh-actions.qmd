@@ -1,7 +1,7 @@
 ---
 pagetitle: ghactions
 title: The anatomy of a gh-action
-subtitle: "Understanding what makes a github action tick"
+subtitle: "Understanding what makes a GitHub Actions workflow tick"
 date: 2023-10-23
 search: true
 ---
