@@ -27,7 +27,7 @@ It's important to note that code coverage is only telling you if a test exists, 
 testing all that should be tested against that line of code.
 
 For information on how to add testing to R packages, [R-pkgs.org](https://r-pkgs.org/testing-basics.html) covers
-setting up tests with test that.
+setting up tests with `testthat`.
 
 ## How do I set it up?
 

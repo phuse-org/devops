@@ -54,11 +54,12 @@ toc: false
 ::: grid
 ::: {.g-col-12 .g-col-lg-8 .top-story-text}
 ## Welcome to the home of **PharmaDevOps**
-This PHUSE working group is initially focussed on ensuring R package authors
-can easily add CICD to pharmaverse R packages
+This PHUSE working group is  focussed on ensuring R package authors new
+to concepts like CICD can
+can easily add these useful automations to pharmaverse R packages
 and related biostatistical packages.
 
-Our aim is not to re-invent the wheel. We hope to both
+We hope to both
 convince package developers of the value of CICD,
 provide a minimum bar of what is expected, and provide a
 set of tools to make it easy to implement.
@@ -158,4 +159,26 @@ The following CICD are tools are optional tools for power users.
 :::
 
 :::
+:::
+
+
+::: {.content-container}
+```{=html}
+<script src="https://giscus.app/client.js"
+        data-repo="phuse-org/devops"
+        data-repo-id="R_kgDOJyUvpw"
+        data-category="General"
+        data-category-id="DIC_kwDOJyUvp84CXbBd"
+        data-mapping="url"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="light"
+        data-lang="en"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>
+```
 :::
