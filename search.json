@@ -158,7 +158,7 @@
     "href": "content/cicdworkflows-minimum/posts/code-coverage.html#why-should-i-use-this",
     "title": "Check code coverage",
     "section": "Why should I use this?",
-    "text": "Why should I use this?\nThis workflow measures code coverage for unit tests and reports the code coverage as a percentage of the total number of lines covered by unit tests vs. the total number of lines in the codebase in an R package.\nIt’s important to note that code coverage is only telling you if a test exists, not that the test is testing all that should be tested against that line of code.\nFor information on how to add testing to R packages, R-pkgs.org covers setting up tests with test that."
+    "text": "Why should I use this?\nThis workflow measures code coverage for unit tests and reports the code coverage as a percentage of the total number of lines covered by unit tests vs. the total number of lines in the codebase in an R package.\nIt’s important to note that code coverage is only telling you if a test exists, not that the test is testing all that should be tested against that line of code.\nFor information on how to add testing to R packages, R-pkgs.org covers setting up tests with testthat."
   },
   {
     "objectID": "content/cicdworkflows-minimum/posts/code-coverage.html#how-do-i-set-it-up",
