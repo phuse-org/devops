@@ -8,6 +8,7 @@ search: false
 description: The home of the PharmaDevOps PhUSE Working Group.
 image: assets/PharmaDevOps.png
 
+
 listing:
   - id: cicdworkflows-minimum
     contents:
@@ -162,23 +163,3 @@ The following CICD are tools are optional tools for power users.
 :::
 
 
-::: {.content-container}
-```{=html}
-<script src="https://giscus.app/client.js"
-        data-repo="phuse-org/devops"
-        data-repo-id="R_kgDOJyUvpw"
-        data-category="General"
-        data-category-id="DIC_kwDOJyUvp84CXbBd"
-        data-mapping="url"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="bottom"
-        data-theme="light"
-        data-lang="en"
-        data-loading="lazy"
-        crossorigin="anonymous"
-        async>
-</script>
-```
-:::
