@@ -2,14 +2,3 @@ title-block-banner: true
 sidebar: false
 page-layout: article
 
-comments:
-  giscus: 
-    repo: phuse-org/devops
-    repo-id: R_kgDOJyUvpw
-    category: General
-    category-id: DIC_kwDOJyUvp84CXbBd
-    mapping: url
-    reactions-enabled: true
-    loading: lazy
-    input-position: bottom
-    theme: light
