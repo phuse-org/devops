@@ -6,7 +6,6 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="The home of the PharmaDevOps PhUSE Working Group.">
 
 <title>PharmaDevOps</title>
 <style>
@@ -32,8 +31,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./assets/PharmaDevOps.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -63,104 +60,15 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-cicdworkflows-minimum .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-cicdworkflows-minimum'] = new List('listing-cicdworkflows-minimum', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-cicdworkflows-recommend .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-cicdworkflows-recommend'] = new List('listing-cicdworkflows-recommend', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-cicdworkflows-enhanced .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-cicdworkflows-enhanced'] = new List('listing-cicdworkflows-enhanced', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="PharmaDevOps">
-<meta property="og:description" content="The home of the PharmaDevOps PhUSE Working Group.">
+<meta property="og:title" content="">
 <meta property="og:image" content="https://phuse-org.github.io/devops/assets/PharmaDevOps.png">
 <meta property="og:site-name" content="PharmaDevOps">
 <meta property="og:image:height" content="1200">
 <meta property="og:image:width" content="1200">
-<meta name="twitter:title" content="PharmaDevOps">
-<meta name="twitter:description" content="The home of the PharmaDevOps PhUSE Working Group.">
+<meta name="twitter:title" content="">
 <meta name="twitter:image" content="https://phuse-org.github.io/devops/assets/PharmaDevOps.png">
 <meta name="twitter:site" content="@PHUSETwitta">
 <meta name="twitter:image-height" content="1200">
@@ -168,7 +76,7 @@ ul.task-list li input[type="checkbox"] {
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -213,12 +121,51 @@ ul.task-list li input[type="checkbox"] {
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-layout-custom page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./contact.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Contact Us</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#getting-started-with-cicd" id="toc-getting-started-with-cicd" class="nav-link active" data-scroll-target="#getting-started-with-cicd">Getting started with CICD</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/phuse-org/devops/edit/main/index.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/phuse-org/devops/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+    </div>
 <!-- main -->
+<main class="content" id="quarto-document-content">
 
 
 
@@ -226,8 +173,8 @@ ul.task-list li input[type="checkbox"] {
 <div class="content-container">
 <div class="top-story blue-background">
 <div class="grid">
-<section id="welcome-to-the-home-of-pharmadevops" class="g-col-12 g-col-lg-8 top-story-text">
-<h2>Welcome to the home of <strong>PharmaDevOps</strong></h2>
+<section id="welcome-to-the-home-of-pharmadevops" class="level2 g-col-12 g-col-lg-8 top-story-text">
+<h2 class="anchored" data-anchor-id="welcome-to-the-home-of-pharmadevops">Welcome to the home of <strong>PharmaDevOps</strong></h2>
 <p>This PHUSE working group is focussed on ensuring R package authors new to concepts like CICD can can easily add these useful automations to pharmaverse R packages and related biostatistical packages.</p>
 <p>We hope to both convince package developers of the value of CICD, provide a minimum bar of what is expected, and provide a set of tools to make it easy to implement.</p>
 </section>
@@ -245,8 +192,8 @@ ul.task-list li input[type="checkbox"] {
 <div class="content-container">
 <div class="top-story">
 <div class="grid">
-<section id="getting-started-with-cicd" class="g-col-12 top-story-text">
-<h2>Getting started with CICD</h2>
+<section id="getting-started-with-cicd" class="level2 g-col-12 top-story-text">
+<h2 class="anchored" data-anchor-id="getting-started-with-cicd">Getting started with CICD</h2>
 <p>In this guidance, you’ll see a number of <code>gh-actions</code> that you can use to implement CICD on your project. We have categorised these into three groups:</p>
 <ul>
 <li><em>Minimum CICD</em>: These are the minimum CICD tools we recommend for all packages, including those in the <code>pharmaverse</code> and <code>openstatsware</code>. These CICD tools are focussed on ensuring your package works, and the documentation users see matches the latest release of your code.</li>
@@ -269,223 +216,47 @@ ul.task-list li input[type="checkbox"] {
 <div class="content-container">
 <div class="listing-block">
 <p><a href="./content/cicdworkflows-minimum/index.html"></a></p><a href="./content/cicdworkflows-minimum/index.html">
-<h2 id="minimum-cicd">Minimum CICD</h2>
+</a><section id="minimum-cicd" class="level2"><a href="./content/cicdworkflows-minimum/index.html">
+<h2 class="anchored" data-anchor-id="minimum-cicd">Minimum CICD</h2>
 <p>The following CICD is what we consider a minimum bar for a package on the pharmaverse. These CICD tools are focussed on ensuring your package works, and documentation matches the code.</p>
 <p>There is no need to use the specific code we suggest, if you are happy getting the same functionality from another source, like the ones built into <code>usethis</code>.</p>
 </a><p><a href="./content/cicdworkflows-minimum/index.html"></a></p>
-<div id="listing-cicdworkflows-minimum" class="quarto-listing quarto-listing-container-grid">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Testing" data-listing-date-sort="1692748800000" data-listing-file-modified-sort="1708677878791" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
-<a href="./content/cicdworkflows-minimum/posts/r-cmd-check/r-cmd-check.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./content/cicdworkflows-minimum/posts/r-cmd-check/r-cmd-check.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-R CMD Check
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Testing'); return false;">
-Testing
-</div>
-</div>
-<div class="card-text listing-description">
-<p>Ensure that when you release your package, all the unit tests are passing and it works in a clean environment.</p>
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
+<div id="cicdworkflows-minimum">
 
 </div>
-<div class="listing-date">
-Aug 23, 2023
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="1" data-categories="Documentation,R" data-listing-date-sort="1690848000000" data-listing-file-modified-sort="1708677878791" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
-<a href="./content/cicdworkflows-minimum/posts/pkgdown.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="https://pkgdown.r-lib.org/logo.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Generate pkgdown documentation
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Documentation'); return false;">
-Documentation
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
-R
-</div>
-</div>
-<div class="card-text listing-description">
-<p>Automate creation and deployment of R package documentation</p>
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-
-</div>
-<div class="listing-date">
-Aug 1, 2023
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="Testing,R" data-listing-date-sort="1690848000000" data-listing-file-modified-sort="1708677878791" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
-<a href="./content/cicdworkflows-minimum/posts/code-coverage.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="https://covr.r-lib.org/reference/figures/logo.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Check code coverage
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Testing'); return false;">
-Testing
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
-R
-</div>
-</div>
-<div class="card-text listing-description">
-This workflow measures code coverage for unit tests and reports the code coverage as a percentage of the total number of lines covered by unit tests vs.&nbsp;the total number of…
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Pharmaverse
-</div>
-<div class="listing-date">
-Aug 1, 2023
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div>
+</section>
 </div>
 </div>
 <div class="content-container">
 <div class="listing-block">
 <p><a href="./content/cicdworkflows-recommend/index.html"></a></p><a href="./content/cicdworkflows-recommend/index.html">
-<h2 id="recommended-cicd">Recommended CICD</h2>
+</a><section id="recommended-cicd" class="level2"><a href="./content/cicdworkflows-recommend/index.html">
+<h2 class="anchored" data-anchor-id="recommended-cicd">Recommended CICD</h2>
 <p>The following CICD are tools we feel make your life developing and releasing robust code easier.</p>
 </a><p><a href="./content/cicdworkflows-recommend/index.html"></a></p>
-<div id="listing-cicdworkflows-recommend" class="quarto-listing quarto-listing-container-grid">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Documentation,Links" data-listing-date-sort="1690848000000" data-listing-file-modified-sort="1708677878791" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
-<a href="./content/cicdworkflows-recommend/posts/check-links/check-links.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./content/cicdworkflows-recommend/posts/check-links/404.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Check links
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Documentation'); return false;">
-Documentation
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Links'); return false;">
-Links
-</div>
-</div>
-<div class="card-text listing-description">
-<p>This workflow checks whether URLs embedded in code and documentation are valid. Invalid URLs result in workflow failures.</p>
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
+<div id="cicdworkflows-recommend">
 
 </div>
-<div class="listing-date">
-Aug 1, 2023
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div>
+</section>
 </div>
 </div>
 <div class="content-container">
 <div class="listing-block">
 <p><a href="./content/cicdworkflows-enhanced/index.html"></a></p><a href="./content/cicdworkflows-enhanced/index.html">
-<h2 id="enhanced-cicd">Enhanced CICD</h2>
+</a><section id="enhanced-cicd" class="level2"><a href="./content/cicdworkflows-enhanced/index.html">
+<h2 class="anchored" data-anchor-id="enhanced-cicd">Enhanced CICD</h2>
 <p>The following CICD are tools are optional tools for power users.</p>
 </a><p><a href="./content/cicdworkflows-enhanced/index.html"></a></p>
-<div id="listing-cicdworkflows-enhanced" class="quarto-listing quarto-listing-container-grid">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Testing,Documentation,Validation" data-listing-date-sort="1690848000000" data-listing-file-modified-sort="1708677878791" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
-<a href="./content/cicdworkflows-enhanced/posts/validate/validate.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./content/cicdworkflows-enhanced/posts/validate/validate.jpg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-theValidator
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Testing'); return false;">
-Testing
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Documentation'); return false;">
-Documentation
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Validation'); return false;">
-Validation
-</div>
-</div>
-<div class="card-text listing-description">
-<p>This workflow will take your documentation, and link it to unit testing, creating a report that links requirements (documentation) to tests of those requirements.</p>
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
+<div id="cicdworkflows-enhanced">
 
 </div>
-<div class="listing-date">
-Aug 1, 2023
+</section>
 </div>
-</div>
-</div>
-</div>
-</a>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div>
-</div>
-</div>
-<div class="content-container">
-<script src="https://giscus.app/client.js" data-repo="phuse-org/devops" data-repo-id="R_kgDOJyUvpw" data-category="General" data-category-id="DIC_kwDOJyUvp84CXbBd" data-mapping="url" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="bottom" data-theme="light" data-lang="en" data-loading="lazy" crossorigin="anonymous" async="">
-</script>
 </div>
 
 
 
-
-
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -719,6 +490,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<script src="https://giscus.app/client.js" data-repo="phuse-org/devops" data-repo-id="R_kgDOJyUvpw" data-category="General" data-category-id="DIC_kwDOJyUvp84CXbBd" data-mapping="url" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="bottom" data-theme="light" data-lang="en" crossorigin="anonymous" data-loading="lazy" async="">
+</script>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -734,7 +507,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </a>
   </li>  
 </ul>
-    <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/phuse-org/devops/edit/main/index.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/phuse-org/devops/issues/new" class="toc-action">Report an issue</a></p></div></div></div>
+    </div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

@@ -70,6 +70,48 @@
     "text": "Dinakar Kulkanari\nDinakar is the lead of the IDR team at Roche/Genentech in Data & Statistical Sciences, and the general architect of Roche’s strategy for improving businesss developer efficiency, and ensuring we have robust release processes. He’s the data scientist’s go-to person for all things devops.\n\n\n\n\n\n\n\n\n\nBen Straub\nBen Straub is a Principal Programmer at GlaxoSmithKline. You can’t spend much time in the pharmaverse without getting to know Ben and his passion for collaboration. Ben was an instrumental anchor in tying CICD to value in admiral, and is now lending his expertise to guide PharmaDevOps.\n\n\n\n\n\n\n\n\n\nJames Black\nJames Black is a Senior Director, Insights Engineering, at Roche/Genentech in Data & Statistical Sciences. Via sponsoring the Insights Codebase, and being forced to learn daily as the PO/BO of the Clinical and RWE/PHC Scientific Computing Environments respectively, he has a niave passion for tools that make our data scientists more efficient at writing great packages."
   },
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "PharmaDevOps",
+    "section": "",
+    "text": "This PHUSE working group is focussed on ensuring R package authors new to concepts like CICD can can easily add these useful automations to pharmaverse R packages and related biostatistical packages.\nWe hope to both convince package developers of the value of CICD, provide a minimum bar of what is expected, and provide a set of tools to make it easy to implement."
+  },
+  {
+    "objectID": "index.html#welcome-to-the-home-of-pharmadevops",
+    "href": "index.html#welcome-to-the-home-of-pharmadevops",
+    "title": "PharmaDevOps",
+    "section": "",
+    "text": "This PHUSE working group is focussed on ensuring R package authors new to concepts like CICD can can easily add these useful automations to pharmaverse R packages and related biostatistical packages.\nWe hope to both convince package developers of the value of CICD, provide a minimum bar of what is expected, and provide a set of tools to make it easy to implement."
+  },
+  {
+    "objectID": "index.html#getting-started-with-cicd",
+    "href": "index.html#getting-started-with-cicd",
+    "title": "PharmaDevOps",
+    "section": "Getting started with CICD",
+    "text": "Getting started with CICD\nIn this guidance, you’ll see a number of gh-actions that you can use to implement CICD on your project. We have categorised these into three groups:\n\nMinimum CICD: These are the minimum CICD tools we recommend for all packages, including those in the pharmaverse and openstatsware. These CICD tools are focussed on ensuring your package works, and the documentation users see matches the latest release of your code.\nRecommended CICD: These are tools we feel make your life developing and releasing robust code easier.\nEnhanced CICD: These are tools are option tools for power users, or those with specific needs.\n\nEach CICD action is described via a common pattern, with an emphasis on why we recommend it, and how to use it.\nA recomended plan for success in implenting CICD on your project is to:\n\nRead this post on the general anatomy of a gh-action\nBrowse our recomended gh-action’s below\nImplement CICD on your git repo!\n\nWe’ve also collected togther this list of external learning resources."
+  },
+  {
+    "objectID": "index.html#minimum-cicd",
+    "href": "index.html#minimum-cicd",
+    "title": "PharmaDevOps",
+    "section": "Minimum CICD",
+    "text": "Minimum CICD\nThe following CICD is what we consider a minimum bar for a package on the pharmaverse. These CICD tools are focussed on ensuring your package works, and documentation matches the code.\nThere is no need to use the specific code we suggest, if you are happy getting the same functionality from another source, like the ones built into usethis."
+  },
+  {
+    "objectID": "index.html#recommended-cicd",
+    "href": "index.html#recommended-cicd",
+    "title": "PharmaDevOps",
+    "section": "Recommended CICD",
+    "text": "Recommended CICD\nThe following CICD are tools we feel make your life developing and releasing robust code easier."
+  },
+  {
+    "objectID": "index.html#enhanced-cicd",
+    "href": "index.html#enhanced-cicd",
+    "title": "PharmaDevOps",
+    "section": "Enhanced CICD",
+    "text": "Enhanced CICD\nThe following CICD are tools are optional tools for power users."
+  },
+  {
     "objectID": "content/cicdworkflows-enhanced/posts/validate/validate.html",
     "href": "content/cicdworkflows-enhanced/posts/validate/validate.html",
     "title": "theValidator",
