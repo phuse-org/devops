@@ -18,7 +18,9 @@ website:
     #title: false
     collapse-below: lg
     right:
-      - meetings/index.qmd
+      - text: "Discuss"
+        href: "https://github.com/phuse-org/devops/discussions"
+      #- meetings/index.qmd
       - text: "About PharmaDevOps"
         menu:
         - text: "Who we are"
