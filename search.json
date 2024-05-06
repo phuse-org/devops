@@ -1,31 +1,48 @@
 [
   {
-    "objectID": "meetings/minutes/2023-06-23.html",
-    "href": "meetings/minutes/2023-06-23.html",
-    "title": "Meeting 1",
+    "objectID": "meetings/minutes/2023-08-11.html",
+    "href": "meetings/minutes/2023-08-11.html",
+    "title": "Meeting 2",
     "section": "",
-    "text": "Meeting notes:\nNeeded to kick off next meeting\n\nWhat format to use? (e.g. quarto template for site) Dinakar\nJames to pass on linkedin stuff to PHUSE - push out kick off (August)\nCopy in admiral as starting point for template into this repo - Dinakar\nCurate list of links (other cicd tools relevant, trainings) - James\nPHUSE abstract (end of July) - Ben\nplaceholder discussion for git flows - James\nwhat could the purpose of the hackathon? open discussion. Is a workshop better like the R/pharma? - James\nmake doodle for in 2 weeks - james\n\nAim in next meeting (pre-kickoff):\n\nReview/write abstract for PhUSE US Connect\nWork on website content\n\n\nInternal servers? Gitlab self-hosted, and github enterprise, github SaaS"
+    "text": "Meeting actions:\n\nTheme decided on\nDinakar to draft and share abstract\nJames to load in some example content\nJames to talk to ROpenSci (also include link outs on how to use the r-universe?)"
   },
   {
-    "objectID": "meetings/index.html",
-    "href": "meetings/index.html",
-    "title": "Meetings",
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
     "section": "",
-    "text": "Meeting notes and minutes.\n\n\n\n\n\n\n\n\n  \n\n\n\n\nMeeting 2\n\n\nMeeting notes\n\n\n\n\n\n\n\n\n\nAug 11, 2023\n\n\n\n\n\n\n  \n\n\n\n\nMeeting 1\n\n\nMeeting notes from the first meeting\n\n\n\n\n\n\n\n\n\nJun 23, 2023\n\n\n\n\n\n\nNo matching items"
+    "text": "Dinakar Kulkanari\nDinakar is the lead of the IDR team at Roche/Genentech in Data & Statistical Sciences, and the general architect of Roche’s strategy for improving businesss developer efficiency, and ensuring we have robust release processes. He’s the data scientist’s go-to person for all things devops.\n\n\n\n\n\n\n\n\n\n\n\n\nBen Straub\nBen Straub is a Principal Programmer at GlaxoSmithKline. You can’t spend much time in the pharmaverse without getting to know Ben and his passion for collaboration. Ben was an instrumental anchor in tying CICD to value in admiral, and is now lending his expertise to guide PharmaDevOps.\n\n\n\n\n\n\n\n\n\n\n\n\nJames Black\nJames Black is a Senior Director, Insights Engineering, at Roche/Genentech in Data & Statistical Sciences. Via sponsoring the Insights Codebase, and being forced to learn daily as the PO/BO of the Clinical and RWE/PHC Scientific Computing Environments respectively, he has a niave passion for tools that make our data scientists more efficient at writing great packages.",
+    "crumbs": [
+      "About"
+    ]
   },
   {
-    "objectID": "post/posts/gh-actions.html",
-    "href": "post/posts/gh-actions.html",
-    "title": "The anatomy of a gh-action",
+    "objectID": "content/cicdworkflows-minimum/posts/code-coverage.html",
+    "href": "content/cicdworkflows-minimum/posts/code-coverage.html",
+    "title": "Check code coverage",
     "section": "",
-    "text": "GitHub Actions are a powerful automation and CI/CD (Continuous Integration/Continuous Deployment) platform provided by GitHub. It allows you to automate various tasks and workflows in response to events that occur in your GitHub repositories. Actions are defined using YAML files that specify the workflow to be executed. The workflow file typically has a .yml extension. Below is an explanation of the key syntax elements in a GitHub Actions workflow file as an annotated example:\n# Name: You can specify a name for your workflow.\n# This is a human-readable description of the workflow\n# and is not required for the workflow to function.\nname: My CI/CD Workflow\n\n# on: This specifies the events that trigger the workflow.\n# You can set it to various events like pushes to a\n# repository, pull requests, or even a schedule.\non:\n  push:\n    branches:\n      - master\n  pull_request:\n    branches:\n      - master\n\n# jobs: This is the main section of the workflow file.\n# It defines the jobs that are to be executed when\n# the workflow is triggered.\njobs:\n  build:\n    runs-on: ubuntu-latest # Specifies the type of virtual\n    # machine or runner on which the job will run. GitHub\n    # provides various runners for different platforms,\n    # including Windows, Linux, and macOS.\n    steps: # Contains a list of steps that are executed\n    # in the specified order. Steps are individual\n    # tasks within a job.\n      - name: Checkout code\n        uses: actions/checkout@v2"
+    "text": "About the gh-action\n\n\n\n\n\nExample of use: falcon R package"
   },
   {
-    "objectID": "contact.html",
-    "href": "contact.html",
-    "title": "Contact Us",
-    "section": "",
-    "text": "GitHub: @phuse-org/devops\nTwitter: @PHUSETwitta"
+    "objectID": "content/cicdworkflows-minimum/posts/code-coverage.html#why-should-i-use-this",
+    "href": "content/cicdworkflows-minimum/posts/code-coverage.html#why-should-i-use-this",
+    "title": "Check code coverage",
+    "section": "Why should I use this?",
+    "text": "Why should I use this?\nThis workflow measures code coverage for unit tests and reports the code coverage as a percentage of the total number of lines covered by unit tests vs. the total number of lines in the codebase in an R package.\nIt’s important to note that code coverage is only telling you if a test exists, not that the test is testing all that should be tested against that line of code.\nFor information on how to add testing to R packages, R-pkgs.org covers setting up tests with testthat."
+  },
+  {
+    "objectID": "content/cicdworkflows-minimum/posts/code-coverage.html#how-do-i-set-it-up",
+    "href": "content/cicdworkflows-minimum/posts/code-coverage.html#how-do-i-set-it-up",
+    "title": "Check code coverage",
+    "section": "How do I set it up?",
+    "text": "How do I set it up?\nYou can call this action via adding a call to this job in a GitHub Actions workflow. A minimal example that runs this on commits to master is:\nname: Code coverage\n# sourced from phuse-org/devops-toolkit\n\non:\n  pull_request:\n    types:\n      - opened\n      - synchronize\n      - reopened\n      - ready_for_review\n    branches:\n      - main\n  push:\n    branches:\n      - main\n  workflow_dispatch:\n\njobs:\n  coverage:\n    name: Code Coverage\n    uses: phuse-org/devops-toolkit/.github/workflows/test-coverage.yml@main"
+  },
+  {
+    "objectID": "content/cicdworkflows-minimum/posts/code-coverage.html#the-deets",
+    "href": "content/cicdworkflows-minimum/posts/code-coverage.html#the-deets",
+    "title": "Check code coverage",
+    "section": "The deets",
+    "text": "The deets\nThe covr R package is used to calculate the coverage."
   },
   {
     "objectID": "content/cicdworkflows-minimum/posts/r-cmd-check/r-cmd-check.html",
@@ -61,55 +78,6 @@
     "title": "R CMD Check",
     "section": "Advanced use",
     "text": "Advanced use\n\nUsing other CRAN-like repositories\nTo use other CRAN-like repositories in your workflow, you can specify them using the extra-repositories option in the workflow file. This is particularly useful if your package depends on packages not available on CRAN or if you want to use the latest versions of packages from a specific repository.\nIn the example below, we add two additional repositories: https://pharmaverse.r-universe.dev/ and https://insightsengineering.r-universe.dev/. These repositories are added in a whitespace-separated list to the extra-repositories option. This allows R CMD Check to access packages from these repositories as well as CRAN.\nname: Run R-CMD-check\n\n# Specify the event types here\n\njobs:\n  check:\n    name: Check\n    uses: phuse-org/devops-toolkit/.github/workflows/R-CMD-check.yml@main\n    # Use the option to add extra repositories.\n    # One or more repositories can be added in a whitespace-separated list.\n    # In the example below, we add https://pharmaverse.r-universe.dev/ and\n    # https://insightsengineering.r-universe.dev/ as additional repositories.\n    with:\n      extra-repositories: \"https://pharmaverse.r-universe.dev/ https://insightsengineering.r-universe.dev/\""
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "Dinakar Kulkanari\nDinakar is the lead of the IDR team at Roche/Genentech in Data & Statistical Sciences, and the general architect of Roche’s strategy for improving businesss developer efficiency, and ensuring we have robust release processes. He’s the data scientist’s go-to person for all things devops.\n\n\n\n\n\n\n\n\n\nBen Straub\nBen Straub is a Principal Programmer at GlaxoSmithKline. You can’t spend much time in the pharmaverse without getting to know Ben and his passion for collaboration. Ben was an instrumental anchor in tying CICD to value in admiral, and is now lending his expertise to guide PharmaDevOps.\n\n\n\n\n\n\n\n\n\nJames Black\nJames Black is a Senior Director, Insights Engineering, at Roche/Genentech in Data & Statistical Sciences. Via sponsoring the Insights Codebase, and being forced to learn daily as the PO/BO of the Clinical and RWE/PHC Scientific Computing Environments respectively, he has a niave passion for tools that make our data scientists more efficient at writing great packages."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "PharmaDevOps",
-    "section": "",
-    "text": "This PHUSE working group is focussed on ensuring R package authors new to concepts like CICD can can easily add these useful automations to pharmaverse R packages and related biostatistical packages.\nWe hope to both convince package developers of the value of CICD, provide a minimum bar of what is expected, and provide a set of tools to make it easy to implement."
-  },
-  {
-    "objectID": "index.html#welcome-to-the-home-of-pharmadevops",
-    "href": "index.html#welcome-to-the-home-of-pharmadevops",
-    "title": "PharmaDevOps",
-    "section": "",
-    "text": "This PHUSE working group is focussed on ensuring R package authors new to concepts like CICD can can easily add these useful automations to pharmaverse R packages and related biostatistical packages.\nWe hope to both convince package developers of the value of CICD, provide a minimum bar of what is expected, and provide a set of tools to make it easy to implement."
-  },
-  {
-    "objectID": "index.html#getting-started-with-cicd",
-    "href": "index.html#getting-started-with-cicd",
-    "title": "PharmaDevOps",
-    "section": "Getting started with CICD",
-    "text": "Getting started with CICD\nIn this guidance, you’ll see a number of gh-actions that you can use to implement CICD on your project. We have categorised these into three groups:\n\nMinimum CICD: These are the minimum CICD tools we recommend for all packages, including those in the pharmaverse and openstatsware. These CICD tools are focussed on ensuring your package works, and the documentation users see matches the latest release of your code.\nRecommended CICD: These are tools we feel make your life developing and releasing robust code easier.\nEnhanced CICD: These are tools are option tools for power users, or those with specific needs.\n\nEach CICD action is described via a common pattern, with an emphasis on why we recommend it, and how to use it.\nA recomended plan for success in implenting CICD on your project is to:\n\nRead this post on the general anatomy of a gh-action\nBrowse our recomended gh-action’s below\nImplement CICD on your git repo!\n\nWe’ve also collected togther this list of external learning resources."
-  },
-  {
-    "objectID": "index.html#minimum-cicd",
-    "href": "index.html#minimum-cicd",
-    "title": "PharmaDevOps",
-    "section": "Minimum CICD",
-    "text": "Minimum CICD\nThe following CICD is what we consider a minimum bar for a package on the pharmaverse. These CICD tools are focussed on ensuring your package works, and documentation matches the code.\nThere is no need to use the specific code we suggest, if you are happy getting the same functionality from another source, like the ones built into usethis."
-  },
-  {
-    "objectID": "index.html#recommended-cicd",
-    "href": "index.html#recommended-cicd",
-    "title": "PharmaDevOps",
-    "section": "Recommended CICD",
-    "text": "Recommended CICD\nThe following CICD are tools we feel make your life developing and releasing robust code easier."
-  },
-  {
-    "objectID": "index.html#enhanced-cicd",
-    "href": "index.html#enhanced-cicd",
-    "title": "PharmaDevOps",
-    "section": "Enhanced CICD",
-    "text": "Enhanced CICD\nThe following CICD are tools are optional tools for power users."
   },
   {
     "objectID": "content/cicdworkflows-enhanced/posts/validate/validate.html",
@@ -161,6 +129,37 @@
     "text": "The deets\nThis gh-action is using https://urlchecker.r-lib.org/, so is specific to R packages."
   },
   {
+    "objectID": "post/index.html",
+    "href": "post/index.html",
+    "title": "Posts",
+    "section": "",
+    "text": "External references\n\n\nA list of useful external references\n\n\n\n\n\n\n\n\nOct 23, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nThe anatomy of a gh-action\n\n\nUnderstanding what makes a GitHub Actions workflow tick\n\n\n\n\n\n\n\n\nOct 23, 2023\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "post/posts/external-resources.html",
+    "href": "post/posts/external-resources.html",
+    "title": "External references",
+    "section": "",
+    "text": "gh-action documention from GitHub\nTidyverse post on CICD for R devs"
+  },
+  {
+    "objectID": "post/posts/gh-actions.html",
+    "href": "post/posts/gh-actions.html",
+    "title": "The anatomy of a gh-action",
+    "section": "",
+    "text": "GitHub Actions are a powerful automation and CI/CD (Continuous Integration/Continuous Deployment) platform provided by GitHub. It allows you to automate various tasks and workflows in response to events that occur in your GitHub repositories. Actions are defined using YAML files that specify the workflow to be executed. The workflow file typically has a .yml extension. Below is an explanation of the key syntax elements in a GitHub Actions workflow file as an annotated example:\n# Name: You can specify a name for your workflow.\n# This is a human-readable description of the workflow\n# and is not required for the workflow to function.\nname: My CI/CD Workflow\n\n# on: This specifies the events that trigger the workflow.\n# You can set it to various events like pushes to a\n# repository, pull requests, or even a schedule.\non:\n  push:\n    branches:\n      - master\n  pull_request:\n    branches:\n      - master\n\n# jobs: This is the main section of the workflow file.\n# It defines the jobs that are to be executed when\n# the workflow is triggered.\njobs:\n  build:\n    runs-on: ubuntu-latest # Specifies the type of virtual\n    # machine or runner on which the job will run. GitHub\n    # provides various runners for different platforms,\n    # including Windows, Linux, and macOS.\n    steps: # Contains a list of steps that are executed\n    # in the specified order. Steps are individual\n    # tasks within a job.\n      - name: Checkout code\n        uses: actions/checkout@v2"
+  },
+  {
+    "objectID": "contact.html",
+    "href": "contact.html",
+    "title": "Contact Us",
+    "section": "",
+    "text": "GitHub: @phuse-org/devops\nTwitter: @PHUSETwitta",
+    "crumbs": [
+      "Contact Us"
+    ]
+  },
+  {
     "objectID": "content/cicdworkflows-minimum/posts/pkgdown.html",
     "href": "content/cicdworkflows-minimum/posts/pkgdown.html",
     "title": "Generate pkgdown documentation",
@@ -189,52 +188,17 @@
     "text": "The deets\nIf you have built docs locally in the past, you are probably aware that your git repo will balloon in size, as it stores a copy of each piece version of every plot and image you have used in your documentation. This gh-action will help you avoid that, by placing the versioned documentation into an orphan branch. Helping to keep your docs (a built artefact) seperate from your source code."
   },
   {
-    "objectID": "content/cicdworkflows-minimum/posts/code-coverage.html",
-    "href": "content/cicdworkflows-minimum/posts/code-coverage.html",
-    "title": "Check code coverage",
+    "objectID": "meetings/minutes/2023-06-23.html",
+    "href": "meetings/minutes/2023-06-23.html",
+    "title": "Meeting 1",
     "section": "",
-    "text": "About the gh-action\n\n\n\n\n\nExample of use: falcon R package"
+    "text": "Meeting notes:\nNeeded to kick off next meeting\n\nWhat format to use? (e.g. quarto template for site) Dinakar\nJames to pass on linkedin stuff to PHUSE - push out kick off (August)\nCopy in admiral as starting point for template into this repo - Dinakar\nCurate list of links (other cicd tools relevant, trainings) - James\nPHUSE abstract (end of July) - Ben\nplaceholder discussion for git flows - James\nwhat could the purpose of the hackathon? open discussion. Is a workshop better like the R/pharma? - James\nmake doodle for in 2 weeks - james\n\nAim in next meeting (pre-kickoff):\n\nReview/write abstract for PhUSE US Connect\nWork on website content\n\n\nInternal servers? Gitlab self-hosted, and github enterprise, github SaaS"
   },
   {
-    "objectID": "content/cicdworkflows-minimum/posts/code-coverage.html#why-should-i-use-this",
-    "href": "content/cicdworkflows-minimum/posts/code-coverage.html#why-should-i-use-this",
-    "title": "Check code coverage",
-    "section": "Why should I use this?",
-    "text": "Why should I use this?\nThis workflow measures code coverage for unit tests and reports the code coverage as a percentage of the total number of lines covered by unit tests vs. the total number of lines in the codebase in an R package.\nIt’s important to note that code coverage is only telling you if a test exists, not that the test is testing all that should be tested against that line of code.\nFor information on how to add testing to R packages, R-pkgs.org covers setting up tests with testthat."
-  },
-  {
-    "objectID": "content/cicdworkflows-minimum/posts/code-coverage.html#how-do-i-set-it-up",
-    "href": "content/cicdworkflows-minimum/posts/code-coverage.html#how-do-i-set-it-up",
-    "title": "Check code coverage",
-    "section": "How do I set it up?",
-    "text": "How do I set it up?\nYou can call this action via adding a call to this job in a GitHub Actions workflow. A minimal example that runs this on commits to master is:\nname: Code coverage\n# sourced from phuse-org/devops-toolkit\n\non:\n  pull_request:\n    types:\n      - opened\n      - synchronize\n      - reopened\n      - ready_for_review\n    branches:\n      - main\n  push:\n    branches:\n      - main\n  workflow_dispatch:\n\njobs:\n  coverage:\n    name: Code Coverage\n    uses: phuse-org/devops-toolkit/.github/workflows/test-coverage.yml@main"
-  },
-  {
-    "objectID": "content/cicdworkflows-minimum/posts/code-coverage.html#the-deets",
-    "href": "content/cicdworkflows-minimum/posts/code-coverage.html#the-deets",
-    "title": "Check code coverage",
-    "section": "The deets",
-    "text": "The deets\nThe covr R package is used to calculate the coverage."
-  },
-  {
-    "objectID": "post/index.html",
-    "href": "post/index.html",
-    "title": "Posts",
+    "objectID": "meetings/index.html",
+    "href": "meetings/index.html",
+    "title": "Meetings",
     "section": "",
-    "text": "The anatomy of a gh-action\n\n\nUnderstanding what makes a GitHub Actions workflow tick\n\n\n\n\n\n\n\n\n\nOct 23, 2023\n\n\n\n\n\n\n  \n\n\n\n\nExternal references\n\n\nA list of useful external references\n\n\n\n\n\n\n\n\n\nOct 23, 2023\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "post/posts/external-resources.html",
-    "href": "post/posts/external-resources.html",
-    "title": "External references",
-    "section": "",
-    "text": "gh-action documention from GitHub\nTidyverse post on CICD for R devs"
-  },
-  {
-    "objectID": "meetings/minutes/2023-08-11.html",
-    "href": "meetings/minutes/2023-08-11.html",
-    "title": "Meeting 2",
-    "section": "",
-    "text": "Meeting actions:\n\nTheme decided on\nDinakar to draft and share abstract\nJames to load in some example content\nJames to talk to ROpenSci (also include link outs on how to use the r-universe?)"
+    "text": "Meeting notes and minutes.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMeeting 2\n\n\nMeeting notes\n\n\n\n\n\n\n\n\nAug 11, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nMeeting 1\n\n\nMeeting notes from the first meeting\n\n\n\n\n\n\n\n\nJun 23, 2023\n\n\n\n\n\n\nNo matching items"
   }
 ]

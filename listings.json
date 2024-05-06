@@ -1,17 +1,19 @@
 [
   {
-    "listing": "/meetings/index.html",
-    "items": [
-      "/meetings/minutes/2023-08-11.html",
-      "/meetings/minutes/2023-06-23.html"
-    ]
-  },
-  {
-    "listing": "/content/cicdworkflows-minimum/index.html",
+    "listing": "/index.html",
     "items": [
       "/content/cicdworkflows-minimum/posts/r-cmd-check/r-cmd-check.html",
       "/content/cicdworkflows-minimum/posts/pkgdown.html",
-      "/content/cicdworkflows-minimum/posts/code-coverage.html"
+      "/content/cicdworkflows-minimum/posts/code-coverage.html",
+      "/content/cicdworkflows-recommend/posts/check-links/check-links.html",
+      "/content/cicdworkflows-enhanced/posts/validate/validate.html"
+    ]
+  },
+  {
+    "listing": "/post/index.html",
+    "items": [
+      "/post/posts/external-resources.html",
+      "/post/posts/gh-actions.html"
     ]
   },
   {
@@ -27,10 +29,18 @@
     ]
   },
   {
-    "listing": "/post/index.html",
+    "listing": "/content/cicdworkflows-minimum/index.html",
     "items": [
-      "/post/posts/gh-actions.html",
-      "/post/posts/external-resources.html"
+      "/content/cicdworkflows-minimum/posts/r-cmd-check/r-cmd-check.html",
+      "/content/cicdworkflows-minimum/posts/pkgdown.html",
+      "/content/cicdworkflows-minimum/posts/code-coverage.html"
+    ]
+  },
+  {
+    "listing": "/meetings/index.html",
+    "items": [
+      "/meetings/minutes/2023-08-11.html",
+      "/meetings/minutes/2023-06-23.html"
     ]
   }
 ]
